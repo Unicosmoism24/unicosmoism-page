@@ -1,0 +1,246 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Important Links</title>
+  <link rel="icon" href="favicon.png" type="image/png" />
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: #000;
+      color: #d0eaff;
+      /* New “sacred / 90s space” font, bold for readability */
+      font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
+      font-weight: bold;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    #stars {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      background: black;
+      overflow: hidden;
+    }
+
+    .star {
+      position: absolute;
+      width: 2px;
+      height: 2px;
+      background: #88ccff;
+      border-radius: 50%;
+      animation: twinkle 2s infinite ease-in-out;
+    }
+
+    @keyframes twinkle {
+      0%, 100% { opacity: 0.2; }
+      50%     { opacity: 1; }
+    }
+
+    header {
+      text-align: center;
+      padding: 3rem 1rem 2rem 1rem;
+      background: rgba(0, 0, 64, 0.6);
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      color: #7ec8e3;
+      text-shadow: 0 0 10px #9ef;
+    }
+
+    header p {
+      font-style: italic;
+      color: #a9d6f3;
+      font-size: 1.1rem;
+    }
+
+    /* Navigation bar styling */
+    nav {
+      background: rgba(0, 0, 64, 0.8);
+      margin-bottom: 1.5rem;
+    }
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0.5rem 1rem;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+    }
+    nav li {
+      margin: 0;
+    }
+    nav a {
+      color: #7ec8e3;
+      text-decoration: none;
+      font-size: 1rem;
+      font-weight: bold;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    nav img {
+      width: 20px;
+      height: 20px;
+      vertical-align: middle;
+      margin-right: 6px;
+    }
+
+    .center-image {
+      text-align: center;
+      margin: 2rem 0;
+    }
+
+    main {
+      max-width: 800px;
+      margin: auto;
+      padding: 2rem;
+      background: rgba(0, 0, 64, 0.6);
+      border-radius: 10px;
+      box-shadow: 0 0 30px rgba(128, 192, 255, 0.3);
+    }
+
+    h2 {
+      color: #b0ffff;
+      text-shadow: 0 0 5px #8fd;
+      border-bottom: 1px solid #88ddff;
+      padding-bottom: 0.3rem;
+      margin-top: 0;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      color: #aad;
+      font-size: 0.9rem;
+    }
+
+    /* Link list styling */
+    .links-list {
+      margin-top: 1rem;
+      padding-left: 1.2rem;
+    }
+    .links-list li {
+      margin-bottom: 0.8rem;
+    }
+    .links-list a {
+      color: #80e0ff;
+      text-decoration: none;
+    }
+    .links-list a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div id="stars"></div>
+
+  <!-- Hidden audio element -->
+  <audio autoplay loop id="bg-music">
+    <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_94b958c1db.mp3?filename=cosmic-drift-118492.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+  <header>
+    <h1>The Sacred Teachings of the Church of Cosmic Oneness</h1>
+    <p>Of the Order of Unicosmoism and the Unicosmist Ways</p>
+  </header>
+
+  <nav>
+    <ul>
+      <li>
+        <a href="index.html">
+          <img src="favicon.png" alt="Home icon">
+          Home
+        </a>
+      </li>
+      <li>
+        <a href="about.html">
+          <img src="favicon.png" alt="About icon">
+          About Unicosmoism
+        </a>
+      </li>
+      <li>
+        <a href="important-links.html">
+          <img src="favicon.png" alt="Links icon">
+          Important Links
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+  <main>
+    <h2>Important Links</h2>
+    <p>Here are some links to material that I believe is essential for those on the path to Cosmic Awareness. Take your time and don’t overwhelm yourself—these links are not going anywhere! I highly suggest starting with the first two, but there is no particular order.</p>
+    <p>More links will be added.</p>
+    <ul class="links-list">
+      <li>
+        <a href="https://www.youtube.com/watch?v=BkVGsRPVwI8&t=1s" target="_blank">
+          Alan Watts | Lecture on Time | Essential Lectures of Alan Watts
+        </a>
+      </li>
+      <li>
+        <a href="https://www.youtube.com/watch?v=ylqPkuCJPBs" target="_blank">
+          Alan Watts – Full Unedited Version of “Conversation with Myself”
+        </a>
+      </li>
+      <li>
+        <a href="https://www.gita-society.com/bhagavad-gita-in-english-source-file.pdf" target="_blank">
+          Bhagavad-Gita in English (PDF)
+        </a>
+      </li>
+      <li>
+        <a href="https://organism.earth/library/author/terence-mckenna" target="_blank">
+          Mass-Archived Terence McKenna Lectures
+        </a>
+      </li>
+      <li>
+        <a href="https://organism.earth/library/author/alan-watts" target="_blank">
+          Mass-Archived Alan Watts Lectures
+        </a>
+      </li>
+      <li>
+        <a href="https://www.gutenberg.org/ebooks/author/44679" target="_blank">
+          A Collection of Books by Carl Gustav Jung
+        </a>
+      </li>
+    </ul>
+  </main>
+
+  <footer>
+    &copy; The Church of Cosmic Oneness. All rights reserved. Embrace the Unicosmist Way.
+  </footer>
+
+  <script>
+    // Generate twinkling stars
+    const starCount = 150;
+    const starsContainer = document.getElementById('stars');
+    for (let i = 0; i < starCount; i++) {
+      const star = document.createElement('div');
+      star.className = 'star';
+      star.style.top = `${Math.random() * 100}%`;
+      star.style.left = `${Math.random() * 100}%`;
+      star.style.animationDuration = `${1 + Math.random() * 2}s`;
+      starsContainer.appendChild(star);
+    }
+
+    // Play background music after first user interaction
+    document.addEventListener('click', () => {
+      const audio = document.getElementById('bg-music');
+      if (audio.paused) {
+        audio.play();
+      }
+    }, { once: true });
+  </script>
+</body>
+</html>
