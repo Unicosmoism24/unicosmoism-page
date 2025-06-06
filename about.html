@@ -1,12 +1,10 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>About Unicosmoism</title>
-  <link rel="icon" href="favicon.png" />
+  <link rel="icon" href="favicon.png" type="image/png" />
 
   <style>
     body {
@@ -67,6 +65,7 @@
     /* Navigation bar styling */
     nav {
       background: rgba(0, 0, 64, 0.8);
+      margin-bottom: 1.5rem;
     }
     nav ul {
       list-style: none;
@@ -74,9 +73,10 @@
       padding: 0.5rem 1rem;
       display: flex;
       justify-content: center;
+      gap: 2rem;
     }
     nav li {
-      margin: 0 1rem;
+      margin: 0;
     }
     nav a {
       color: #7ec8e3;
@@ -86,6 +86,17 @@
     }
     nav a:hover {
       text-decoration: underline;
+    }
+    nav img {
+      width: 20px;
+      height: 20px;
+      vertical-align: middle;
+      margin-right: 6px;
+    }
+
+    .center-image {
+      text-align: center;
+      margin: 2rem 0;
     }
 
     main {
@@ -119,6 +130,7 @@
   <!-- Hidden audio element -->
   <audio autoplay loop id="bg-music">
     <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_94b958c1db.mp3?filename=cosmic-drift-118492.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
   </audio>
 
   <header>
@@ -128,8 +140,18 @@
 
   <nav>
     <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About Unicosmoism</a></li>
+      <li>
+        <a href="index.html">
+          <img src="favicon.png" alt="Home icon">
+          Home
+        </a>
+      </li>
+      <li>
+        <a href="about.html">
+          <img src="favicon.png" alt="About icon">
+          About Unicosmoism
+        </a>
+      </li>
     </ul>
   </nav>
 
@@ -174,3 +196,6 @@
   </script>
 </body>
 </html>
+
+
+
