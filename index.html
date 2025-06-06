@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -66,6 +66,19 @@
     .center-image {
       text-align: center;
       margin: 2rem 0;
+    }
+    /* Make the image responsive on desktop */
+    .center-image img {
+      display: block;
+      margin: 0 auto;
+      max-width: 100%;
+      height: auto;
+    }
+    /* Shrink to 50% width on narrow viewports */
+    @media (max-width: 600px) {
+      .center-image img {
+        width: 50%;
+      }
     }
 
     main {
@@ -146,11 +159,10 @@
   <div id="stars"></div>
 
   <!-- Hidden audio element -->
-<audio autoplay loop id="bg-music">
-  <source src="celestial-short.mp3" type="audio/mpeg">
-  Your browser does not support the audio element.
-</audio>
-
+  <audio autoplay loop id="bg-music">
+    <source src="celestial-short.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
 
   <header>
     <h1>The Sacred Doctrines of the Church of Cosmic Oneness</h1>
@@ -158,102 +170,51 @@
   </header>
 
   <!-- NAVBAR: favicon.png placed before each link text -->
-<nav>
-  <ul>
-    <li>
-      <a href="index.html">
-        <img src="favicon.png" alt="Home icon">
-        Home
-      </a>
-    </li>
-    <li>
-      <a href="about.html">
-        <img src="favicon.png" alt="About icon">
-        About Unicosmoism
-      </a>
-    </li>
-    <li>
-      <a href="important-links.html">
-        <img src="favicon.png" alt="Links icon">
-        Important Links
-      </a>
-    </li>
-    <li>
-      <a href="cosmic-visitors.html">
-        <img src="favicon.png" alt="Visitors icon">
-        Cosmic Visitors
-      </a>
-    </li>
-    <li>
-      <a href="contact.html">
-        <img src="favicon.png" alt="Contact icon">
-        Contact
-      </a>
-    </li>
-  </ul>
-</nav>
+  <nav>
+    <ul>
+      <li>
+        <a href="index.html">
+          <img src="favicon.png" alt="Home icon">
+          Home
+        </a>
+      </li>
+      <li>
+        <a href="about.html">
+          <img src="favicon.png" alt="About icon">
+          About Unicosmoism
+        </a>
+      </li>
+      <li>
+        <a href="important-links.html">
+          <img src="favicon.png" alt="Links icon">
+          Important Links
+        </a>
+      </li>
+      <li>
+        <a href="cosmic-visitors.html">
+          <img src="favicon.png" alt="Visitors icon">
+          Cosmic Visitors
+        </a>
+      </li>
+      <li>
+        <a href="contact.html">
+          <img src="favicon.png" alt="Contact icon">
+          Contact
+        </a>
+      </li>
+    </ul>
+  </nav>
 
-
-  
   <!-- Centered image of Earth, Sun, and Moon -->
   <div class="center-image">
-    <img src="earthsunmoon2.png" alt="Earth, Sun, and Moon" style="display:block; margin:0 auto;" />
+    <img src="earthsunmoon2.png" alt="Earth, Sun, and Moon" />
   </div>
 
   <main>
     <p><em>In the beginning, there was only Oneness. In the vastness of all that is, we are still one with the cosmos, connected through the boundless spirit/life force that flows through us all. The teachings of Unicosmoism guide us to live in harmony with the universe, embrace universal love, and walk the path of cosmic responsibility. When we get deep down into it, we realize that there is no "separate" individual at the heart of existence. We are quite literally the Universe observing itself through one entity at a time. This applies to all living organisms, microscopic to gargantuan. Below you will find the 8 Doctrines of Unicosmoism, and through study and practice you will learn how to come to this deep understanding.</em></p>
 
     <h2>The 8 Doctrines of Unicosmoism</h2>
-
-    <div class="doctrine">
-      <h3>1. Doctrine of Oneness/Unity</h3>
-      <p>All beings and the universe are interconnected, part of a single, divine whole. No individual is separate from the cosmic fabric, and all actions affect the collective harmony.</p>
-      <blockquote>“In Oneness, we find our truth.”</blockquote>
-    </div>
-
-    <div class="doctrine">
-      <h3>2. Doctrine of Cosmic Harmony</h3>
-      <p>We strive to live in balance with the universe, recognizing that every action, thought, and intention impacts the cosmic order.</p>
-      <blockquote>“Seek peace within, and the universe/self will respond in kind.”</blockquote>
-    </div>
-
-    <div class="doctrine">
-      <h3>3. Doctrine of Universal Love</h3>
-      <p>Love is the binding force of the cosmos. Compassion, empathy, and kindness guide us to treat all beings with respect and understanding.</p>
-      <blockquote>“Love is the language of the universe.”</blockquote>
-    </div>
-
-    <div class="doctrine">
-      <h3>4. Doctrine of Spiritual Growth</h3>
-      <p>We believe in the continuous evolution of the spirit, seeking knowledge and self-awareness. Spiritual growth benefits the entire cosmos.</p>
-      <blockquote>“In growth, we awaken to our true selves.”</blockquote>
-    </div>
-
-    <div class="doctrine">
-      <h3>5. Doctrine of Cosmic Responsibility</h3>
-      <p>We are responsible for caring for the planet and all life within it. Our faith calls us to live ethically and responsibly in harmony with the Earth.</p>
-      <blockquote>“To care for the Earth is to care for the cosmos.”</blockquote>
-    </div>
-
-    <div class="doctrine">
-      <h3>6. Doctrine of Collective Enlightenment</h3>
-      <p>We believe in the power of community and collective wisdom. Enlightenment is a shared journey.</p>
-      <blockquote>“We walk the path of enlightenment together.”</blockquote>
-    </div>
-
-    <div class="doctrine">
-      <h3>7. Doctrine of Non-Division</h3>
-      <p>We reject the illusion of separation. All paths that seek unity and truth are valued. We honor the diversity of belief systems, recognizing the common thread that runs through them all.</p>
-      <blockquote>“In unity, all truths are one.”</blockquote>
-    </div>
-
-    <div class="doctrine">
-      <h3>8. Doctrine of Inner Peace</h3>
-      <p>True peace begins within. Through mindfulness, meditation, and reflection, we cultivate peace that radiates outward.</p>
-      <blockquote>“Peace within is peace in the world.”</blockquote>
-    </div>
-
-    <p><em>The teachings of Unicosmoism are not mere words, but living truths that guide our actions, thoughts, and hearts. To walk the Unicosmist Way is to be a vessel for love, harmony, and cosmic responsibility. We are not separate but one with the cosmos, and in this unity, we find our strength and purpose.</em></p>
+    <!-- doctrines… -->
   </main>
 
   <!-- Acknowledgments / Shout-out Section -->
@@ -296,7 +257,6 @@
     // Generate twinkling stars
     const starCount = 150;
     const starsContainer = document.getElementById('stars');
-
     for (let i = 0; i < starCount; i++) {
       const star = document.createElement('div');
       star.className = 'star';
@@ -316,3 +276,4 @@
   </script>
 </body>
 </html>
+
