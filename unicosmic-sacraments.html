@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Unicosmic Sacraments</title>
   <link rel="icon" href="favicon.png" type="image/png" />
-  
   <style>
     body {
       margin: 0;
@@ -23,99 +22,167 @@
       height: 100%;
       top: 0; left: 0;
       z-index: -1;
-      background: #000;
+      background: black;
       overflow: hidden;
     }
     .star {
       position: absolute;
       width: 2px; height: 2px;
-      background: #fff;
+      background: #88ccff;
       border-radius: 50%;
-      animation: twinkle 2s infinite;
+      animation: twinkle 2s infinite ease-in-out;
     }
     @keyframes twinkle {
-      0%,100% { opacity: 0.3; }
-      50%     { opacity: 1; }
+      0%, 100% { opacity: 0.2; }
+      50%      { opacity: 1; }
+    }
+    header {
+      text-align: center;
+      padding: 3rem 1rem 2rem 1rem;
+      background: rgba(0, 0, 64, 0.6);
+    }
+    header h1 {
+      font-size: 2.5rem;
+      color: #7ec8e3;
+      text-shadow: 0 0 10px #9ef;
+    }
+    /* Centering the image container */
+    .center-image {
+      text-align: center;
+      margin: 2rem 0;
+    }
+    .center-image img {
+      display: block;
+      margin: 0 auto;
+      max-width: 100%;
+      height: auto;
+    }
+    @media (max-width: 600px) {
+      .center-image img {
+        width: 50%;
+      }
+    }
+    main {
+      max-width: 800px;
+      margin: auto;
+      padding: 2rem;
+      background: rgba(0, 0, 64, 0.6);
+      border-radius: 10px;
+      box-shadow: 0 0 30px rgba(128, 192, 255, 0.3);
+    }
+    /* NAVBAR STYLES */
+    nav {
+      text-align: center;
+      margin-bottom: 1.5rem;
     }
     nav ul {
       list-style: none;
-      display: flex;
-      justify-content: center;
-      padding: 1rem 0;
+      padding: 0;
       margin: 0;
-      background: rgba(0,0,0,0.5);
+      display: inline-flex;
+      gap: 2rem;
     }
-    nav li { margin: 0 1rem; }
     nav a {
-      color: #00ffff;
+      color: #d0eaff;
       text-decoration: none;
-      font-size: 1rem;
+      font-size: 1.1rem;
     }
     nav img {
+      width: 20px;
+      height: 20px;
       vertical-align: middle;
-      width: 1em;
-      margin-right: 0.5em;
-      filter: brightness(0) invert(1);
-    }
-    .container {
-      max-width: 800px;
-      margin: 2rem auto;
-      padding: 0 1rem;
-    }
-    h1 {
-      text-align: center;
-      color: #00ffff;
+      margin-right: 6px;
     }
   </style>
 </head>
 <body>
   <div id="stars"></div>
-  
+
+  <header>
+    <h1>Unicosmic Sacraments</h1>
+  </header>
+
   <nav>
     <ul>
       <li>
         <a href="index.html">
-          <img src="/unicosmoism-page/favicon.png" alt="Home icon">
+          <img src="favicon.png" alt="Home icon">
           Home
         </a>
       </li>
       <li>
         <a href="about.html">
-          <img src="/unicosmoism-page/favicon.png" alt="About icon">
+          <img src="favicon.png" alt="About icon">
           About Unicosmoism
         </a>
       </li>
       <li>
         <a href="important-links.html">
-          <img src="/unicosmoism-page/favicon.png" alt="Links icon">
+          <img src="favicon.png" alt="Links icon">
           Important Links
         </a>
       </li>
       <li>
         <a href="cosmic-visitors.html">
-          <img src="/unicosmoism-page/favicon.png" alt="Visitors icon">
+          <img src="favicon.png" alt="Visitors icon">
           Cosmic Visitors
         </a>
       </li>
       <li>
         <a href="contact.html">
-          <img src="/unicosmoism-page/favicon.png" alt="Contact icon">
+          <img src="favicon.png" alt="Contact icon">
           Contact
         </a>
       </li>
       <li>
         <a href="unicosmic-sacraments.html">
-          <img src="/unicosmoism-page/favicon.png" alt="Sacraments icon">
+          <img src="favicon.png" alt="Sacraments icon">
           Unicosmic Sacraments
         </a>
       </li>
     </ul>
   </nav>
-  
-  <div class="container">
-    <h1>Unicosmic Sacraments</h1>
-    <!-- Add your sacrament descriptions or other content here -->
+
+  <div class="center-image">
+    <img src="earthsunmoon2.png" alt="The Celestial Triad Spiral">
   </div>
+
+  <main>
+    <!-- Sacrament details will go here -->
+  </main>
+
+  <footer>
+    <!-- Footer content removed; will be added later -->
+  </footer>
+
+  <!-- Hit-counter -->
+  <div style="text-align:center; margin: 2rem 0;">
+    <a href="https://www.hitwebcounter.com" target="_blank">
+      <img
+        src="https://hitwebcounter.com/counter/counter.php?page=20827485&style=0010&nbdigits=5&type=page&initCount=0"
+        title="Counter Widget"
+        alt="Visit counter"
+        border="0"
+      />
+    </a>
+  </div>
+
+  <script>
+    // Generate twinkling stars
+    const starCount = 150;
+    const starsContainer = document.getElementById('stars');
+    for (let i = 0; i < starCount; i++) {
+      const star = document.createElement('div');
+      star.className = 'star';
+      star.style.top = `${Math.random() * 100}%`;
+      star.style.left = `${Math.random() * 100}%`;
+      star.style.animationDuration = `${1 + Math.random() * 2}s`;
+      starsContainer.appendChild(star);
+    }
+
+    // No background music on this page
+  </script>
 </body>
 </html>
+
 
