@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Great Unfolding: Teachings from the Church of Cosmic Oneness</title>
+  <link rel="icon" href="favicon.png" type="image/png" />
+  <style>
+    body { margin:0; padding:0; background:#000; color:#d0eaff; font-family:'Palatino Linotype','Book Antiqua',Palatino,serif; font-weight:bold; line-height:1.7; overflow-x:hidden; }
+    #stars { position:fixed; width:100%; height:100%; top:0; left:0; z-index:-1; background:black; overflow:hidden; }
+    .star { position:absolute; width:2px; height:2px; background:#88ccff; border-radius:50%; animation:twinkle 2s infinite ease-in-out; }
+    @keyframes twinkle {0%,100%{opacity:0.2;}50%{opacity:1;}}
+    header { text-align:center; padding:3rem 1rem 2rem; background:rgba(0,0,64,0.6); }
+    header h1 { font-size:2.5rem; color:#7ec8e3; text-shadow:0 0 10px #9ef; }
+    header p  { font-style:italic; color:#a9d6f3; font-size:1.1rem; }
+    nav { text-align:center; margin:1rem 0; }
+    nav ul { list-style:none; padding:0; margin:0; display:inline-flex; gap:2rem; }
+    nav a { color:#d0eaff; text-decoration:none; font-size:1.1rem; }
+    nav img { width:20px; height:20px; vertical-align:middle; margin-right:6px; }
+    main { max-width:800px; margin:auto; padding:2rem; background:rgba(0,0,64,0.6); border-radius:10px; box-shadow:0 0 30px rgba(128,192,255,0.3); }
+    .book-content h2 { color:#b0ffff; text-shadow:0 0 5px #8fd; border-bottom:1px solid #88ddff; padding-bottom:0.3rem; margin-top:2rem; }
+    .book-content p { margin:1rem 0; }
+    footer { text-align:center; padding:2rem 1rem; color:#aad; font-size:0.9rem; }
+  </style>
+</head>
+<body>
+  <div id="stars"></div>
+  <audio autoplay loop id="bg-music" oncanplay="this.volume=0.2">
+    <source src="celestial-short.mp3" type="audio/mpeg">
+  </audio>
+  <header>
+    <h1>The Great Unfolding</h1>
+    <p>Teachings from the Church of Cosmic Oneness</p>
+  </header>
+  <nav>
+    <ul>
+      <li><a href="index.html"><img src="favicon.png">Home</a></li>
+      <li><a href="about.html"><img src="favicon.png">About Unicosmoism</a></li>
+      <li><a href="book.html"><img src="favicon.png">The Book</a></li>
+    </ul>
+  </nav>
+  <main>
+    <div class="book-content">
+      <!-- Begin Book Content -->
+      " + require('fs').readFileSync('/mnt/data/great-unfolding.html', 'utf8') + "
+      <!-- End Book Content -->
+    </div>
+  </main>
+  <footer>
+    &copy; The Church of Cosmic Oneness. All rights reserved. Embrace the Unicosmist Way.
+  </footer>
+  <script>
+    const starCount=150, stars=document.getElementById('stars');
+    for(let i=0;i<starCount;i++){let s=document.createElement('div');s.className='star';s.style.top=`${Math.random()*100}%`;s.style.left=`${Math.random()*100}%`;s.style.animationDuration=`${1+Math.random()*2}s`;stars.appendChild(s);}  
+    document.addEventListener('click',()=>{let a=document.getElementById('bg-music');if(a.paused)a.play();},{once:true});
+  </script>
+</body>
+</html>
