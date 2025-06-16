@@ -112,9 +112,11 @@
 <body>
   <div id="stars"></div>
 
-  <audio autoplay loop id="bg-music">
-    <source src="cosmic-visitors-ambient.mp3" type="audio/mpeg">
-  </audio>
+  <audio autoplay loop id="bg-music"
+       oncanplay="this.volume = 0.1">
+  <source src="cosmic-visitors-ambient.mp3" type="audio/mpeg">
+</audio>
+
 
   <header>
     <h1>The Sacred Teachings of the Church of Cosmic Oneness</h1>
