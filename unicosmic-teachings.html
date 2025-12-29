@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Unicosmic Teachings</title>
+  <link rel="icon" href="favicon.png" type="image/png" />
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: #000;
+      color: #d0eaff;
+      font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
+      font-weight: bold;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    #stars {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      background: black;
+      overflow: hidden;
+    }
+
+    .star {
+      position: absolute;
+      width: 2px;
+      height: 2px;
+      background: #88ccff;
+      border-radius: 50%;
+      animation: twinkle 2s infinite ease-in-out;
+    }
+
+    @keyframes twinkle {
+      0%, 100% { opacity: 0.2; }
+      50% { opacity: 1; }
+    }
+
+    header {
+      text-align: center;
+      padding: 3rem 1rem 2rem 1rem;
+      background: rgba(0, 0, 64, 0.6);
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      color: #7ec8e3;
+      text-shadow: 0 0 10px #9ef;
+    }
+
+    nav {
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+
+    nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: inline-flex;
+      gap: 2rem;
+    }
+
+    nav a {
+      color: #d0eaff;
+      text-decoration: none;
+      font-size: 1.1rem;
+    }
+
+    nav img {
+      width: 20px;
+      height: 20px;
+      vertical-align: middle;
+      margin-right: 6px;
+    }
+
+    .center-image {
+      text-align: center;
+      margin: 2rem 0;
+    }
+
+    .center-image img {
+      display: block;
+      margin: 0 auto;
+      max-width: 30%;
+      height: auto;
+    }
+
+    @media (max-width: 600px) {
+      .center-image img {
+        width: 50%;
+      }
+    }
+
+    main {
+      max-width: 800px;
+      margin: auto;
+      padding: 2rem;
+      background: rgba(0, 0, 64, 0.6);
+      border-radius: 10px;
+      box-shadow: 0 0 30px rgba(128, 192, 255, 0.3);
+    }
+
+    h2 {
+      color: #b0ffff;
+      text-shadow: 0 0 5px #8fd;
+      border-bottom: 1px solid #88ddff;
+      padding-bottom: 0.3rem;
+      text-align: center;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      color: #aad;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="stars"></div>
+
+  <header>
+    <h1>Unicosmic Teachings</h1>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="index.html"><img src="favicon.png">Home</a></li>
+      <li><a href="about.html"><img src="favicon.png">About Unicosmoism</a></li>
+      <li><a href="important-links.html"><img src="favicon.png">Important Links</a></li>
+      <li><a href="cosmic-visitors.html"><img src="favicon.png">Cosmic Visitors</a></li>
+      <li><a href="unicosmic-teachings.html"><img src="favicon.png">Unicosmic Teachings</a></li>
+      <li><a href="contact.html"><img src="favicon.png">Contact</a></li>
+      <li><a href="unicosmic-sacraments.html"><img src="favicon.png">Unicosmic Sacraments</a></li>
+    </ul>
+  </nav>
+
+  <div class="center-image">
+    <img src="earthsunmoon2.png" alt="The Celestial Triad Spiral" />
+  </div>
+
+  <main>
+    <h2>Cosmic Void Meditation</h2>
+    <p><em>More teachings and sacred practices will be added soon.</em></p>
+  </main>
+
+  <footer>
+    <a href="https://www.hitwebcounter.com" target="_blank">
+      <img src="https://hitwebcounter.com/counter/counter.php?page=20827485&style=001&nbdigits=5&type=page&initCount=0"
+           title="Counter Widget" alt="Visit counter" border="0" />
+    </a>
+  </footer>
+
+  <script>
+    const starCount = 150;
+    const starsContainer = document.getElementById('stars');
+    for (let i = 0; i < starCount; i++) {
+      const star = document.createElement('div');
+      star.className = 'star';
+      star.style.top = `${Math.random() * 100}%`;
+      star.style.left = `${Math.random() * 100}%`;
+      star.style.animationDuration = `${1 + Math.random() * 2}s`;
+      starsContainer.appendChild(star);
+    }
+  </script>
+
+</body>
+</html>
