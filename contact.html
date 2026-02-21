@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contact</title>
+  <title>Contact - Unicosmoism</title>
   <link rel="icon" href="favicon.png" type="image/png" />
 
   <style>
@@ -12,7 +12,6 @@
       padding: 0;
       background: #000;
       color: #d0eaff;
-      /* “Sacred / 90s space” font, bold for readability */
       font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
       font-weight: bold;
       line-height: 1.7;
@@ -41,7 +40,7 @@
 
     @keyframes twinkle {
       0%, 100% { opacity: 0.2; }
-      50%     { opacity: 1; }
+      50%      { opacity: 1; }
     }
 
     header {
@@ -62,53 +61,81 @@
       font-size: 1.1rem;
     }
 
-    /* Navigation bar styling */
+    /* MASTER NAVIGATION */
     nav {
-      background: rgba(0, 0, 64, 0.8);
+      text-align: center;
       margin-bottom: 1.5rem;
+      background: rgba(0, 0, 40, 0.4);
+      padding: 10px 0;
     }
+
     nav ul {
       list-style: none;
+      padding: 0;
       margin: 0;
-      padding: 0.5rem 1rem;
-      display: flex;
+      display: inline-flex;
+      flex-wrap: wrap;
       justify-content: center;
-      gap: 2rem;
+      gap: 1.5rem;
     }
-    nav li {
-      margin: 0;
-    }
+
     nav a {
-      color: #7ec8e3;
+      color: #d0eaff;
       text-decoration: none;
-      font-size: 1rem;
-      font-weight: bold;
+      font-size: 1.05rem;
+      transition: color 0.3s ease;
     }
+
     nav a:hover {
-      text-decoration: underline;
+      color: #80e0ff;
+      text-shadow: 0 0 8px #80e0ff;
     }
+
     nav img {
-      width: 20px;
-      height: 20px;
+      width: 18px;
+      height: 18px;
       vertical-align: middle;
       margin-right: 6px;
     }
 
     main {
       max-width: 800px;
-      margin: auto;
-      padding: 2rem;
-      background: rgba(0, 0, 64, 0.6);
-      border-radius: 10px;
-      box-shadow: 0 0 30px rgba(128, 192, 255, 0.3);
+      margin: 4rem auto;
+      padding: 3rem;
+      background: rgba(0, 0, 64, 0.7);
+      border-radius: 15px;
+      box-shadow: 0 0 40px rgba(0, 150, 255, 0.2);
+      backdrop-filter: blur(4px);
+      text-align: center;
     }
 
     h2 {
       color: #b0ffff;
-      text-shadow: 0 0 5px #8fd;
-      border-bottom: 1px solid #88ddff;
-      padding-bottom: 0.3rem;
+      text-shadow: 0 0 8px #8fd;
+      border-bottom: 2px solid rgba(136, 221, 255, 0.3);
+      padding-bottom: 0.5rem;
       margin-top: 0;
+    }
+
+    .contact-link {
+      display: block;
+      font-size: 1.5rem;
+      color: #80e0ff;
+      text-decoration: none;
+      margin: 2rem 0;
+      transition: all 0.3s ease;
+      text-shadow: 0 0 5px rgba(128, 224, 255, 0.5);
+    }
+
+    .contact-link:hover {
+      text-shadow: 0 0 15px #80e0ff;
+      transform: scale(1.05);
+    }
+
+    .copy-text {
+      font-size: 0.9rem;
+      color: #a9d6f3;
+      opacity: 0.8;
     }
 
     footer {
@@ -122,10 +149,8 @@
 <body>
   <div id="stars"></div>
 
-  <!-- Hidden audio element -->
-  <audio autoplay loop id="bg-music">
-    <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_94b958c1db.mp3?filename=cosmic-drift-118492.mp3" type="audio/mpeg">
-    Your browser does not support the audio element.
+  <audio autoplay loop id="bg-music" oncanplay="this.volume=0.1">
+    <source src="celestial-short.mp3" type="audio/mpeg">
   </audio>
 
   <header>
@@ -133,75 +158,45 @@
     <p>of the Order of Unicosmoism and the Unicosmic Way</p>
   </header>
 
-<nav>
-  <ul>
-    <li>
-      <a href="index.html">
-        <img src="favicon.png" alt="Home icon">
-        Home
-      </a>
-    </li>
-    <li>
-      <a href="about.html">
-        <img src="favicon.png" alt="About icon">
-        About Unicosmoism
-      </a>
-    </li>
-    <li>
-      <a href="important-links.html">
-        <img src="favicon.png" alt="Links icon">
-        Important Links
-      </a>
-    </li>
-    <li>
-      <a href="cosmic-visitors.html">
-        <img src="favicon.png" alt="Visitors icon">
-        Cosmic Visitors
-      </a>
-    </li>
-    <li>
-      <a href="unicosmic-teachings.html">
-        <img src="favicon.png" alt="Book icon">
-        Unicosmic Teachings
-      </a>
-    </li>
-    <li>
-      <a href="contact.html">
-        <img src="favicon.png" alt="Contact icon">
-        Contact
-      </a>
-    </li>
-    <li>
-      <a href="unicosmic-sacraments.html">
-        <img src="favicon.png" alt="Sacraments icon">
-        Unicosmic Sacraments
-      </a>
-    </li>
-  </ul>
-</nav>
-
-
+  <nav>
+    <ul>
+      <li><a href="index.html"><img src="favicon.png" alt="Home"> Home</a></li>
+      <li><a href="about.html"><img src="favicon.png" alt="About"> About Unicosmoism</a></li>
+      <li><a href="important-links.html"><img src="favicon.png" alt="Links"> Important Links</a></li>
+      <li><a href="cosmic-visitors.html"><img src="favicon.png" alt="Visitors"> Cosmic Visitors</a></li>
+      <li><a href="unicosmic-teachings.html"><img src="favicon.png" alt="Book"> Unicosmic Teachings</a></li>
+      <li><a href="contact.html"><img src="favicon.png" alt="Contact"> Contact</a></li>
+      <li><a href="unicosmic-sacraments.html"><img src="favicon.png" alt="Sacraments"> Unicosmic Sacraments</a></li>
+    </ul>
+  </nav>
 
   <main>
-  <h2>Contact</h2>
-  <p>
-    Contact the Church and Rev. Johnson here:
-    <a href="mailto:unicosmoismchurch@gmail.com" style="color: #80e0ff; text-decoration: underline;">
+    <h2>Contact</h2>
+    <p>Reach out to the Church and Rev. Johnson directly:</p>
+    
+    <a href="mailto:unicosmoismchurch@gmail.com" class="contact-link">
       unicosmoismchurch@gmail.com
     </a>
-  </p>
-  <p style="text-align: center;">
-    Alternatively, you can copy/paste this if the link above doesn’t work: unicosmoismchurch@gmail.com
-  </p>
-</main>
 
+    <p class="copy-text">
+      If your browser does not open the link, please copy and paste our address into your email provider.
+    </p>
+  </main>
+
+  <div style="text-align:center; margin: 2rem 0;">
+    <a href="https://www.hitwebcounter.com" target="_blank">
+      <img src="https://hitwebcounter.com/counter/counter.php?page=20827485&style=0010&nbdigits=5&type=page&initCount=0" 
+           title="Counter Widget" 
+           alt="Visit counter" 
+           border="0" />
+    </a>
+  </div>
 
   <footer>
-    &copy; The Church of Cosmic Oneness. All rights reserved. Embrace the Unicosmic Way.
+    &copy; The Church of Cosmic Oneness & The Order of Unicosmoism. All rights reserved. <br> Embrace the Unicosmic Way.
   </footer>
 
   <script>
-    // Generate twinkling stars
     const starCount = 150;
     const starsContainer = document.getElementById('stars');
     for (let i = 0; i < starCount; i++) {
@@ -213,10 +208,9 @@
       starsContainer.appendChild(star);
     }
 
-    // Play background music after first user interaction
     document.addEventListener('click', () => {
       const audio = document.getElementById('bg-music');
-      if (audio.paused) {
+      if (audio && audio.paused) {
         audio.play();
       }
     }, { once: true });
