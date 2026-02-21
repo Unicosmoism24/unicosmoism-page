@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Cosmic Visitors</title>
+  <title>Cosmic Visitors - Unicosmoism</title>
   <link rel="icon" href="favicon.png" type="image/png" />
 
   <style>
@@ -17,163 +17,195 @@
       line-height: 1.7;
       overflow-x: hidden;
     }
+
     #stars {
       position: fixed;
-      width: 100%; height: 100%;
-      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
       z-index: -1;
       background: black;
       overflow: hidden;
     }
+
     .star {
       position: absolute;
-      width: 2px; height: 2px;
+      width: 2px;
+      height: 2px;
       background: #88ccff;
       border-radius: 50%;
       animation: twinkle 2s infinite ease-in-out;
     }
+
     @keyframes twinkle {
-      0%,100% { opacity: 0.2; }
-      50%     { opacity: 1;   }
+      0%, 100% { opacity: 0.2; }
+      50%      { opacity: 1; }
     }
+
     header {
       text-align: center;
-      padding: 3rem 1rem 2rem;
-      background: rgba(0,0,64,0.6);
+      padding: 3rem 1rem 2rem 1rem;
+      background: rgba(0, 0, 64, 0.6);
     }
+
     header h1 {
       font-size: 2.5rem;
       color: #7ec8e3;
       text-shadow: 0 0 10px #9ef;
     }
+
     header p {
       font-style: italic;
       color: #a9d6f3;
       font-size: 1.1rem;
     }
 
-    /* nav styling */
+    /* MASTER NAVIGATION */
     nav {
-      background: rgba(0,0,64,0.8);
+      text-align: center;
       margin-bottom: 1.5rem;
-    }
-    nav ul {
-      list-style: none;
-      margin: 0; padding: 0.5rem 1rem;
-      display: flex; justify-content: center; gap: 2rem;
-    }
-    nav a {
-      color: #7ec8e3;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    nav img {
-      width: 20px; height: 20px;
-      vertical-align: middle; margin-right: 6px;
+      background: rgba(0, 0, 40, 0.4);
+      padding: 10px 0;
     }
 
-    /* image grid */
-    .image-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 1rem;
-      max-width: 800px;
-      margin: 2rem auto;
+    nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: inline-flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.5rem;
     }
-    .image-grid img {
-      width: 100%;
-      height: auto;
-      display: block;
-      border-radius: 4px;
-      box-shadow: 0 0 10px rgba(128,192,255,0.3);
+
+    nav a {
+      color: #d0eaff;
+      text-decoration: none;
+      font-size: 1.05rem;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #80e0ff;
+      text-shadow: 0 0 8px #80e0ff;
+    }
+
+    nav img {
+      width: 18px;
+      height: 18px;
+      vertical-align: middle;
+      margin-right: 6px;
     }
 
     main {
       max-width: 800px;
       margin: 2rem auto;
-      padding: 2rem;
-      background: rgba(0,0,64,0.6);
-      border-radius: 10px;
-      box-shadow: 0 0 30px rgba(128,192,255,0.3);
+      padding: 2.5rem;
+      background: rgba(0, 0, 64, 0.7);
+      border-radius: 15px;
+      box-shadow: 0 0 40px rgba(0, 150, 255, 0.2);
+      backdrop-filter: blur(4px);
     }
+
     h2 {
       color: #b0ffff;
-      text-shadow: 0 0 5px #8fd;
-      border-bottom: 1px solid #88ddff;
-      padding-bottom: 0.3rem; margin-top: 0;
+      text-shadow: 0 0 8px #8fd;
+      border-bottom: 2px solid rgba(136, 221, 255, 0.3);
+      padding-bottom: 0.5rem;
+      text-align: center;
+      margin-top: 2rem;
     }
+
+    h2:first-of-type {
+      margin-top: 0;
+    }
+
+    /* Image Grid Styling */
+    .image-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 1rem;
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+
+    .image-grid img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+      display: block;
+      border-radius: 8px;
+      border: 1px solid rgba(128, 192, 255, 0.3);
+      box-shadow: 0 0 15px rgba(128, 192, 255, 0.2);
+      transition: transform 0.3s ease, border-color 0.3s ease;
+    }
+
+    .image-grid img:hover {
+      transform: scale(1.05);
+      border-color: #80e0ff;
+    }
+
+    .rubin-photo { 
+      width: 100%; 
+      max-width: 500px; 
+      height: auto; 
+      display: block; 
+      margin: 1.5rem auto; 
+      border-radius: 10px;
+      border: 2px solid #7ec8e3;
+      box-shadow: 0 0 20px rgba(126, 200, 227, 0.4);
+    }
+
+    figcaption {
+      text-align: center;
+      font-size: 0.85rem;
+      margin-top: 0.5rem;
+      color: #a9d6f3;
+    }
+
+    figcaption a {
+      color: #8fd;
+      text-decoration: none;
+    }
+
     footer {
       text-align: center;
       padding: 2rem 1rem;
-      color: #aad; font-size: 0.9rem;
+      color: #aad;
+      font-size: 0.9rem;
     }
-    .rubin-photo { width: 400px; max-width: 100%; height: auto; display: block; margin: 0 auto; }
+
+    p {
+      margin-bottom: 1.5rem;
+    }
   </style>
 </head>
 <body>
   <div id="stars"></div>
 
-  <audio autoplay loop id="bg-music"
-       oncanplay="this.volume = 0.1">
-  <source src="cosmic-visitors-ambient.mp3" type="audio/mpeg">
-</audio>
-
+  <audio autoplay loop id="bg-music" oncanplay="this.volume=0.1">
+    <source src="cosmic-visitors-ambient.mp3" type="audio/mpeg">
+  </audio>
 
   <header>
-    <h1>The Sacred Teachings of the Church of Cosmic Oneness</h1>
+    <h1>The Church of Cosmic Oneness</h1>
     <p>of the Order of Unicosmoism and the Unicosmic Way</p>
   </header>
 
-<nav>
-  <ul>
-    <li>
-      <a href="index.html">
-        <img src="favicon.png" alt="Home icon">
-        Home
-      </a>
-    </li>
-    <li>
-      <a href="about.html">
-        <img src="favicon.png" alt="About icon">
-        About Unicosmoism
-      </a>
-    </li>
-    <li>
-      <a href="important-links.html">
-        <img src="favicon.png" alt="Links icon">
-        Important Links
-      </a>
-    </li>
-    <li>
-      <a href="cosmic-visitors.html">
-        <img src="favicon.png" alt="Visitors icon">
-        Cosmic Visitors
-      </a>
-    </li>
-    <li>
-      <a href="unicosmic-teachings.html">
-        <img src="favicon.png" alt="Book icon">
-        Unicosmic Teachings
-      </a>
-    </li>
-    <li>
-      <a href="contact.html">
-        <img src="favicon.png" alt="Contact icon">
-        Contact
-      </a>
-    </li>
-    <li>
-      <a href="unicosmic-sacraments.html">
-        <img src="favicon.png" alt="Sacraments icon">
-        Unicosmic Sacraments
-      </a>
-    </li>
-  </ul>
-</nav>
+  <nav>
+    <ul>
+      <li><a href="index.html"><img src="favicon.png" alt="Home"> Home</a></li>
+      <li><a href="about.html"><img src="favicon.png" alt="About"> About Unicosmoism</a></li>
+      <li><a href="important-links.html"><img src="favicon.png" alt="Links"> Important Links</a></li>
+      <li><a href="cosmic-visitors.html"><img src="favicon.png" alt="Visitors"> Cosmic Visitors</a></li>
+      <li><a href="unicosmic-teachings.html"><img src="favicon.png" alt="Book"> Unicosmic Teachings</a></li>
+      <li><a href="contact.html"><img src="favicon.png" alt="Contact"> Contact</a></li>
+      <li><a href="unicosmic-sacraments.html"><img src="favicon.png" alt="Sacraments"> Unicosmic Sacraments</a></li>
+    </ul>
+  </nav>
 
-
-
-  <!-- Top images -->
   <div class="image-grid">
     <img src="ufo.png" alt="Vintage UFO">
     <img src="halebopp.png" alt="Comet Hale-Bopp">
@@ -188,18 +220,51 @@
     <p>To join us, you do not have to believe that Earth is actively being visited, but if you’re here in the first place and interested in Unicosmoism, you probably already believe in E.T. visitations or that life exists elsewhere in the cosmos.</p>
   </main>
 
-  <!-- Bottom images -->
   <div class="image-grid">
     <img src="cigarufo.png"       alt="Cigar UFO">
     <img src="grey.png"           alt="Grey Alien">
-    <img src="greyhybrid.png"     alt="Grey-Hybrid Alien">
+    <img src="greyhybrid.png"      alt="Grey-Hybrid Alien">
     <img src="whirl.png"          alt="Whirl UFO">
   </div>
-<main> <h2>The Likelihood of Extraterrestrial Life in the Universe</h2>
-  <figure> <img src="vera-rubin.jpg" class="rubin-photo" alt="Vera Rubin Observatory Cosmic Treasure Chest"> <figcaption> Image credit: <a href="https://rubinobservatory.org/gallery/collections/first-look-gallery/mlis3sriah6pn6nfr5ecp46h3i" target="_blank">Rubin Observatory</a> </figcaption> </figure>
-  <p><h2>Is there anybody out there?</h2> <p>We cannot be alone in the cosmos. It is physically and mathematically impossible.</p> <p>Above is an image taken in 2025 by the new Vera Rubin Observatory. The Rubin Observatory is a next‑generation telescope built high in the mountains of Chile. What makes it special isn’t just its size - it’s the way it watches the sky. Instead of taking a few long exposures like most telescopes, Rubin takes rapid, wide‑angle snapshots of the entire sky again and again, all night long.</p> <p>It uses the largest digital camera ever built, capturing images so wide and detailed that it can spot anything that changes: new asteroids, exploding stars, objects drifting through space, or subtle shifts in distant galaxies. Over the next decade, it will create a kind of cosmic time‑lapse, collecting more data in a single year than all other optical observatories combined.</p> <p>The image above, nicknamed the “Cosmic Treasure Chest,” shows a small part of the Virgo Cluster. It covers an area of sky only about eight full Moons wide — a region that looks almost empty to the naked eye. Through a powerful wide‑field telescope, that same patch reveals hundreds of galaxies and details that have never been seen before in human history.</p> <p>In that one tiny slice of sky, about the length of an adult’s forearm held out at arm’s length, there are billions upon billions of stars and galaxies. And that doesn’t include the ones too faint or too distant to appear in the image — those tiny smudges that look like single fuzzy pixels, and whatever lies beyond them. A link is provided directly under the picture, so you can view the original image in full resolution.</p> <p>While you view the image, I want you to pay attention to each spiral galaxy you see and understand how each one contains millions and billions of stars, depending on the galaxy’s size. Stars just like our very own Sun, and countless other star varieties of all shapes, sizes, temperatures, and brightnesses. Stars are the power plants of the Universe and allow for certain life to flourish, as seen on our Earth.</p> <p>Not all life requires starlight and some creatures and microbes can be found deep under the oceans near thermal volcanic vents on the seafloor, but volcanism is just another symptom of a planet with a star. Without the host star’s gravity, even plate tectonics that heat up the ground and oceans will cease to be, causing the molten core of the Earth to eventually cool down and solidify. This is what we believe happened to our Moon and to Mars, both of which appear to have been geologically active in the past, but are now dormant and quiet.</p> <p>Now, all of this isn’t to say that life ONLY exists on worlds with an active star, and I would ultimately believe that to be a foolish assumption, since we don’t even know how to properly define life as we currently see it on our own world. For all we know, there could be plasmoid beings consisting entirely of focused energy (which is basically what we Humans are, but most don’t realize it).</p> <p>So, what am I getting at with all of this? Well, considering how our planet is absolutely teeming with countless forms of life for no particular reason, why would anyone think that we’re the exception and the only ones out there in the scheme of things? We can’t even use our own local solar system as a comparison, since as I already pointed out, the seemingly infinite vastness of the Universe makes it absolutely impossible for us to comprehend just how many other worlds are also out there, co-existing in this moment with us. The real question ends up going from “Is there life out there?” to “I wonder who our closest cosmic neighbors are?”, which opens the next section.</p> <h2>Are we being visited?</h2> <p>This is probably the number one question that most modern folks have about aliens. Even just thirty-years-ago, one would be ridiculed and looked down upon if they claimed to have seen a UFO or an ET. Even people who believed in visitation would keep it to themselves. Luckily, we’re now living in a period where science and philosophy are coming together and meeting in the middle, with both sides seemingly starting to admit that they need each other in order to explain certain aspects of the world and Universe.</p> <p>We’re living in a time where spirituality and self-awareness are growing and toppling organized religions and even some governments. People are tired of the same generic answers for everything - answers that have remained unchanged for centuries, and this is causing multitudes to delve into subjects and go down paths they’d never normally choose. We are truly entering an age of awakening and enlightenment, especially with the invention of the internet. Information is at our fingertips like never before in Human history.</p> <p>Mainstream organized religion usually frowns upon discussion of extraterrestrial life, sometimes outright refusing to even acknowledge the subject, and sometimes replacing ‘alien’ with ‘demon’ when it is brought up.</p> <p>I personally know many Christians who cannot accept the idea of alien beings from other planets, simply because they feel that it will invalidate their beliefs and prove their denomination’s teachings as false, which is the leading reason why most established religions steer away from alien talk. If you’ve been telling people for thousands of years that we’re special and chosen, and the only children of some Sky Father who wasted time creating the entire cosmos yet only put us here on this tiny planet, and then you come down and destroy that entire lie, people start to rebell. You lose control over the masses. This is their biggest fear, and a warranted fear if your goal is absolute control.</p> <p>There have been detailed descriptions of Human/Alien contact throughout our recorded history, and even indigenous peoples will tell how their ancestors 10,000 years ago painted “star beings” on canyon walls in the American Southwest, still visible today, only for archeologists to come along and claim the “star beings” are actually just ceremonial depictions of costumes and head gear, totally dismissing the very indigenous people whose ancestors made the art. The ‘experts’ may know what they’re doing most of the time, but they also come in biased and skeptical about almost everything, including totally dismissing the possibility that ET beings have been here in the past (or even to this day).</p> <p>In Unicosmoism, we approach everything with an open mind and will never dismiss something outright unless we have irrefutable proof. We know that in this infinite Universe, anything is possible.</p> <p>It isn’t my goal to convince you that we’ve been or are actively being visited, but I invite you to come to your own conclusion. Everything I know suggests that yes, we are indeed being visited - we have countless ancient depictions and writings about visitors from the sky, or inside the Earth, and tens of thousands of modern-day abduction accounts and eyewitness testimonies of alien sightings. However, I like to tell people who are seeking answers to “Never take someone’s word about life, death, or existence for certain, since nobody alive can actually tell you why we’re here, or what ‘here’ even is.”</p> </main>
+
+  <main> 
+    <h2>The Likelihood of Extraterrestrial Life</h2>
+    <figure> 
+      <img src="vera-rubin.jpg" class="rubin-photo" alt="Vera Rubin Observatory Cosmic Treasure Chest"> 
+      <figcaption> Image credit: <a href="https://rubinobservatory.org/gallery/collections/first-look-gallery/mlis3sriah6pn6nfr5ecp46h3i" target="_blank">Rubin Observatory</a> </figcaption> 
+    </figure>
+
+    <h2 style="border:none; text-shadow:none; font-size:1.5rem;">Is there anybody out there?</h2> 
+    <p>We cannot be alone in the cosmos. It is physically and mathematically impossible.</p> 
+    <p>Above is an image taken in 2025 by the new Vera Rubin Observatory. The Rubin Observatory is a next‑generation telescope built high in the mountains of Chile. What makes it special isn’t just its size - it’s the way it watches the sky. Instead of taking a few long exposures like most telescopes, Rubin takes rapid, wide‑angle snapshots of the entire sky again and again, all night long.</p> 
+    <p>It uses the largest digital camera ever built, capturing images so wide and detailed that it can spot anything that changes: new asteroids, exploding stars, objects drifting through space, or subtle shifts in distant galaxies. Over the next decade, it will create a kind of cosmic time‑lapse, collecting more data in a single year than all other optical observatories combined.</p> 
+    <p>The image above, nicknamed the “Cosmic Treasure Chest,” shows a small part of the Virgo Cluster. It covers an area of sky only about eight full Moons wide — a region that looks almost empty to the naked eye. Through a powerful wide‑field telescope, that same patch reveals hundreds of galaxies and details that have never been seen before in human history.</p> 
+    <p>In that one tiny slice of sky, about the length of an adult’s forearm held out at arm’s length, there are billions upon billions of stars and galaxies. And that doesn’t include the ones too faint or too distant to appear in the image — those tiny smudges that look like single fuzzy pixels, and whatever lies beyond them.</p> 
+    <p>While you view the image, I want you to pay attention to each spiral galaxy you see and understand how each one contains millions and billions of stars, depending on the galaxy’s size. Stars just like our very own Sun, and countless other star varieties of all shapes, sizes, temperatures, and brightnesses. Stars are the power plants of the Universe and allow for certain life to flourish, as seen on our Earth.</p> 
+    <p>Not all life requires starlight and some creatures and microbes can be found deep under the oceans near thermal volcanic vents on the seafloor, but volcanism is just another symptom of a planet with a star. Without the host star’s gravity, even plate tectonics that heat up the ground and oceans will cease to be, causing the molten core of the Earth to eventually cool down and solidify. This is what we believe happened to our Moon and to Mars, both of which appear to have been geologically active in the past, but are now dormant and quiet.</p> 
+    <p>Now, all of this isn’t to say that life ONLY exists on worlds with an active star, and I would ultimately believe that to be a foolish assumption, since we don’t even know how to properly define life as we currently see it on our own world. For all we know, there could be plasmoid beings consisting entirely of focused energy (which is basically what we Humans are, but most don’t realize it).</p> 
+    <p>The real question ends up going from “Is there life out there?” to “I wonder who our closest cosmic neighbors are?”, which opens the next section.</p> 
+
+    <h2>Are we being visited?</h2> 
+    <p>This is probably the number one question that most modern folks have about aliens. Even just thirty-years-ago, one would be ridiculed and looked down upon if they claimed to have seen a UFO or an ET. Even people who believed in visitation would keep it to themselves. Luckily, we’re now living in a period where science and philosophy are coming together and meeting in the middle.</p> 
+    <p>Mainstream organized religion usually frowns upon discussion of extraterrestrial life, sometimes outright refusing to even acknowledge the subject, and sometimes replacing ‘alien’ with ‘demon’ when it is brought up.</p> 
+    <p>I personally know many Christians who cannot accept the idea of alien beings from other planets, simply because they feel that it will invalidate their beliefs and prove their denomination’s teachings as false, which is the leading reason why most established religions steer away from alien talk. If you’ve been telling people for thousands of years that we’re special and chosen... and then you come down and destroy that entire lie, people start to rebel.</p> 
+    <p>There have been detailed descriptions of Human/Alien contact throughout our recorded history, and even indigenous peoples will tell how their ancestors 10,000 years ago painted “star beings” on canyon walls in the American Southwest, still visible today, only for archeologists to come along and claim the “star beings” are actually just ceremonial depictions of costumes and head gear.</p> 
+    <p>In Unicosmoism, we approach everything with an open mind and will never dismiss something outright unless we have irrefutable proof. We know that in this infinite Universe, anything is possible.</p> 
+    <p style="text-align: center;"><em>"Never take someone’s word about life, death, or existence for certain, since nobody alive can actually tell you why we’re here, or what ‘here’ even is."</em></p> 
+  </main>
+
+  <div style="text-align:center; margin: 2rem 0;">
+    <a href="https://www.hitwebcounter.com" target="_blank">
+      <img src="https://hitwebcounter.com/counter/counter.php?page=20827485&style=0010&nbdigits=5&type=page&initCount=0" 
+           title="Counter Widget" 
+           alt="Visit counter" 
+           border="0" />
+    </a>
+  </div>
+
   <footer>
-    &copy; The Church of Cosmic Oneness. All rights reserved. Embrace the Unicosmic Way.
+    &copy; The Church of Cosmic Oneness & The Order of Unicosmoism. All rights reserved. <br> Embrace the Unicosmic Way.
   </footer>
 
   <script>
@@ -208,18 +273,22 @@
     for (let i = 0; i < starCount; i++) {
       const star = document.createElement('div');
       star.className = 'star';
-      star.style.top = `${Math.random()*100}%`;
-      star.style.left = `${Math.random()*100}%`;
-      star.style.animationDuration = `${1+Math.random()*2}s`;
+      star.style.top = `${Math.random() * 100}%`;
+      star.style.left = `${Math.random() * 100}%`;
+      star.style.animationDuration = `${1 + Math.random() * 2}s`;
       starsContainer.appendChild(star);
     }
+
     document.addEventListener('click', () => {
       const audio = document.getElementById('bg-music');
-      if (audio.paused) audio.play();
+      if (audio && audio.paused) {
+        audio.play();
+      }
     }, { once: true });
   </script>
 </body>
 </html>
+
 
 
 
