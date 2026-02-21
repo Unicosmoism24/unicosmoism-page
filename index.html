@@ -12,7 +12,6 @@
       padding: 0;
       background: #000;
       color: #d0eaff;
-      /* New “sacred / 90s space” font, bold for readability */
       font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
       font-weight: bold;
       line-height: 1.7;
@@ -41,7 +40,7 @@
 
     @keyframes twinkle {
       0%, 100% { opacity: 0.2; }
-      50%     { opacity: 1; }
+      50%      { opacity: 1; }
     }
 
     header {
@@ -62,53 +61,107 @@
       font-size: 1.1rem;
     }
 
-    /* Centering the image container */
+    /* NAVBAR STYLES */
+    nav {
+      text-align: center;
+      margin-bottom: 1.5rem;
+      background: rgba(0, 0, 40, 0.4);
+      padding: 10px 0;
+    }
+
+    nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: inline-flex;
+      flex-wrap: wrap; /* Allows links to wrap on mobile */
+      justify-content: center;
+      gap: 1.5rem;
+    }
+
+    nav a {
+      color: #d0eaff;
+      text-decoration: none;
+      font-size: 1.05rem;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #80e0ff;
+      text-shadow: 0 0 8px #80e0ff;
+    }
+
+    nav img {
+      width: 18px;
+      height: 18px;
+      vertical-align: middle;
+      margin-right: 6px;
+    }
+
     .center-image {
       text-align: center;
       margin: 2rem 0;
     }
-    /* Responsive image */
+
     .center-image img {
       display: block;
       margin: 0 auto;
       max-width: 100%;
       height: auto;
+      border-radius: 50%; /* Optional: softens the image edges */
     }
+
     @media (max-width: 600px) {
-      .center-image img {
-        width: 50%;
-      }
+      .center-image img { width: 70%; }
     }
 
     main {
       max-width: 800px;
       margin: auto;
       padding: 2rem;
-      background: rgba(0, 0, 64, 0.6);
-      border-radius: 10px;
-      box-shadow: 0 0 30px rgba(128, 192, 255, 0.3);
+      background: rgba(0, 0, 64, 0.7);
+      border-radius: 15px;
+      box-shadow: 0 0 40px rgba(0, 150, 255, 0.2);
+      backdrop-filter: blur(4px); /* Softens the stars behind the main text */
     }
 
     h2 {
       color: #b0ffff;
-      text-shadow: 0 0 5px #8fd;
-      border-bottom: 1px solid #88ddff;
-      padding-bottom: 0.3rem;
+      text-shadow: 0 0 8px #8fd;
+      border-bottom: 2px solid rgba(136, 221, 255, 0.3);
+      padding-bottom: 0.5rem;
+      text-align: center;
     }
 
+    /* --- ENHANCED DOCTRINE CARDS --- */
     .doctrine {
-      margin-bottom: 2rem;
+      margin-bottom: 1.5rem;
+      padding: 1.5rem;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(128, 224, 255, 0.1);
+      border-radius: 12px;
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+    .doctrine:hover {
+      transform: translateY(-8px); /* Lifts the doctrine up */
+      background: rgba(128, 224, 255, 0.07);
+      border-color: rgba(128, 224, 255, 0.5);
+      box-shadow: 0 10px 25px rgba(128, 224, 255, 0.2);
     }
 
     .doctrine h3 {
       color: #80e0ff;
-      text-shadow: 0 0 4px #bbf;
+      text-shadow: 0 0 5px #bbf;
+      margin-top: 0;
     }
 
     .doctrine blockquote {
       font-style: italic;
       color: #ffd27f;
-      margin-top: 0.5rem;
+      margin: 1rem 0 0 0;
+      padding-left: 15px;
+      border-left: 2px solid #ffd27f;
     }
 
     footer {
@@ -125,193 +178,126 @@
       color: #ccc;
       text-shadow: 0 0 6px #89f;
     }
-
-    /* NAVBAR STYLES (horizontal) */
-    nav {
-      text-align: center;
-      margin-bottom: 1.5rem;
-    }
-
-    nav ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      display: inline-flex;
-      gap: 2rem;
-    }
-
-    nav a {
-      color: #d0eaff;
-      text-decoration: none;
-      font-size: 1.1rem;
-    }
-
-    nav img {
-      width: 20px;
-      height: 20px;
-      vertical-align: middle;
-      margin-right: 6px;
-    }
   </style>
 </head>
 <body>
   <div id="stars"></div>
 
-  <!-- Hidden audio element -->
-<audio autoplay loop id="bg-music" oncanplay="this.volume=0.1">
-  <source src="celestial-short.mp3" type="audio/mpeg">
-</audio>
-
+  <audio autoplay loop id="bg-music" oncanplay="this.volume=0.1">
+    <source src="celestial-short.mp3" type="audio/mpeg">
+  </audio>
 
   <header>
     <h1>The Church of Cosmic Oneness</h1>
     <p>of the Order of Unicosmoism and the Unicosmic Way</p>
   </header>
 
-<nav>
-  <ul>
-    <li>
-      <a href="index.html">
-        <img src="favicon.png" alt="Home icon">
-        Home
-      </a>
-    </li>
-    <li>
-      <a href="about.html">
-        <img src="favicon.png" alt="About icon">
-        About Unicosmoism
-      </a>
-    </li>
-    <li>
-      <a href="important-links.html">
-        <img src="favicon.png" alt="Links icon">
-        Important Links
-      </a>
-    </li>
-    <li>
-      <a href="cosmic-visitors.html">
-        <img src="favicon.png" alt="Visitors icon">
-        Cosmic Visitors
-      </a>
-    </li>
-    <li>
-      <a href="unicosmic-teachings.html">
-        <img src="favicon.png" alt="Book icon">
-        Unicosmic Teachings
-      </a>
-    </li>
-    <li>
-      <a href="contact.html">
-        <img src="favicon.png" alt="Contact icon">
-        Contact
-      </a>
-    </li>
-    <li>
-      <a href="unicosmic-sacraments.html">
-        <img src="favicon.png" alt="Sacraments icon">
-        Unicosmic Sacraments
-      </a>
-    </li>
-  </ul>
-</nav>
+  <nav>
+    <ul>
+      <li><a href="index.html"><img src="favicon.png" alt="Home"> Home</a></li>
+      <li><a href="about.html"><img src="favicon.png" alt="About"> About Unicosmoism</a></li>
+      <li><a href="important-links.html"><img src="favicon.png" alt="Links"> Important Links</a></li>
+      <li><a href="cosmic-visitors.html"><img src="favicon.png" alt="Visitors"> Cosmic Visitors</a></li>
+      <li><a href="unicosmic-teachings.html"><img src="favicon.png" alt="Book"> Unicosmic Teachings</a></li>
+      <li><a href="contact.html"><img src="favicon.png" alt="Contact"> Contact</a></li>
+      <li><a href="unicosmic-sacraments.html"><img src="favicon.png" alt="Sacraments"> Unicosmic Sacraments</a></li>
+    </ul>
+  </nav>
 
-
-
-
-  <!-- Centered image of Earth, Sun, and Moon with tiny caption -->
-<div class="center-image" style="text-align:center;">
-  <img src="earthsunmoon2.png" alt="Earth, Sun, and Moon" />
-  <div style="font-size: 10px; color: #d0eaff; margin-top: 4px;">
-    The Celestial Triad Spiral
+  <div class="center-image">
+    <img src="earthsunmoon2.png" alt="Earth, Sun, and Moon" />
+    <div style="font-size: 11px; color: #d0eaff; margin-top: 8px; letter-spacing: 1px;">
+      THE CELESTIAL TRIAD SPIRAL
+    </div>
   </div>
-</div>
-
 
   <main>
-    <p><em>In the beginning, there was only Oneness. That Oneness was and still is pure consciousness, and every living organism serves as a receptor or focal point for this cosmic consciousness. In the vastness of all that is, we are still one with the cosmos, connected through the boundless spirit/life force that flows through us all. The teachings of Unicosmoism guide us to live in harmony with the universe, embrace universal love, and walk the path of cosmic responsibility. When we get deep down into it, we realize that there is no "separate" individual at the heart of existence. We are quite literally the Universe observing itself through one entity at a time. This applies to all living organisms, microscopic to gargantuan. Below you will find the 8 Doctrines of Unicosmoism, and through study and practice you will learn how to come to this deep understanding.</em></p>
+    <p style="text-align: center;"><em>In the beginning, there was only Oneness. That Oneness was and still is pure consciousness, and every living organism serves as a receptor or focal point for this cosmic consciousness. In the vastness of all that is, we are still one with the cosmos, connected through the boundless spirit/life force that flows through us all. The teachings of Unicosmoism guide us to live in harmony with the universe, embrace universal love, and walk the path of cosmic responsibility. When we get deep down into it, we realize that there is no "separate" individual at the heart of existence. We are quite literally the Universe observing itself through one entity at a time. This applies to all living organisms, microscopic to gargantuan. Below you will find the 8 Doctrines of Unicosmoism, and through study and practice you will learn how to come to this deep understanding.</em></p>
 
     <h2>The 8 Doctrines of Unicosmoism</h2>
+
     <div class="doctrine">
       <h3>1. Doctrine of Oneness/Unity</h3>
       <p>All beings and the universe are interconnected, part of a single, divine whole. No individual is separate from the cosmic fabric, and all actions affect the collective harmony.</p>
       <blockquote>“In Oneness, we find our truth.”</blockquote>
     </div>
+
     <div class="doctrine">
       <h3>2. Doctrine of Cosmic Harmony</h3>
       <p>We strive to live in balance with the universe, recognizing that every action, thought, and intention impacts the cosmic order.</p>
       <blockquote>“Seek peace within, and the universe/self will respond in kind.”</blockquote>
     </div>
+
     <div class="doctrine">
       <h3>3. Doctrine of Universal Love</h3>
       <p>Love is the binding force of the cosmos. Compassion, empathy, and kindness guide us to treat all beings with respect and understanding.</p>
       <blockquote>“Love is the language of the universe.”</blockquote>
     </div>
+
     <div class="doctrine">
       <h3>4. Doctrine of Spiritual Growth</h3>
       <p>We believe in the continuous evolution of the spirit, seeking knowledge and self-awareness. Spiritual growth benefits the entire cosmos.</p>
       <blockquote>“In growth, we awaken to our true selves.”</blockquote>
     </div>
+
     <div class="doctrine">
       <h3>5. Doctrine of Cosmic Responsibility</h3>
       <p>We are responsible for caring for the planet and all life within it. Our faith calls us to live ethically and responsibly in harmony with the Earth.</p>
       <blockquote>“To care for the Earth is to care for the cosmos.”</blockquote>
     </div>
+
     <div class="doctrine">
       <h3>6. Doctrine of Collective Enlightenment</h3>
       <p>We believe in the power of community and collective wisdom. Enlightenment is a shared journey.</p>
       <blockquote>“We walk the path of enlightenment together.”</blockquote>
     </div>
+
     <div class="doctrine">
       <h3>7. Doctrine of Non-Division</h3>
       <p>We reject the illusion of separation. All paths that seek unity and truth are valued. We honor the diversity of belief systems, recognizing the common thread that runs through them all.</p>
       <blockquote>“In unity, all truths are one.”</blockquote>
     </div>
+
     <div class="doctrine">
       <h3>8. Doctrine of Inner Peace</h3>
       <p>True peace begins within. Through mindfulness, meditation, and reflection, we cultivate peace that radiates outward.</p>
       <blockquote>“Peace within is peace in the world.”</blockquote>
     </div>
 
-    <p><em>The teachings of Unicosmoism are not mere words, but living truths that guide our actions, thoughts, and hearts. To walk the Unicosmist Way is to be a vessel for love, harmony, and cosmic responsibility. We are not separate but one with the cosmos, and in this unity, we find our strength and purpose.</em></p>
+    <p style="text-align: center;"><em>The teachings of Unicosmoism are not mere words, but living truths that guide our actions, thoughts, and hearts. To walk the Unicosmist Way is to be a vessel for love, harmony, and cosmic responsibility. We are not separate but one with the cosmos, and in this unity, we find our strength and purpose.</em></p>
   </main>
 
-  <!-- Acknowledgments / Shout-out Section -->
   <blockquote style="
       font-family: 'Courier New', monospace;
       color: #FFFFFF;
-      background: rgba(0, 0, 0, 0.3);
-      padding: 15px;
-      margin: 20px auto;
-      border-left: 4px solid #00FFFF;
-      max-width: 800px;
-      border-radius: 4px;
+      background: rgba(0, 0, 0, 0.4);
+      padding: 20px;
+      margin: 40px auto;
+      border-left: 4px solid #80e0ff;
+      max-width: 760px;
+      border-radius: 8px;
+      box-shadow: 0 0 20px rgba(128, 224, 255, 0.1);
   ">
-    I’d like to give special thanks to <strong>Alan Watts</strong>, <strong>Carl Jung</strong>, and <strong>Terence McKenna</strong> for their profound insights, which have deeply influenced my understanding of existence, reality, and the Universe.<br>
+    I’d like to give special thanks to <strong>Alan Watts</strong>, <strong>Carl Jung</strong>, and <strong>Terence McKenna</strong> for their profound insights, which have deeply influenced my understanding of existence, reality, and the Universe.<br><br>
     ~ Rev. C.P. Johnson, founder of the Order of Unicosmoism.
   </blockquote>
 
-  <p style="text-align: center; color: #aad; margin-top: 1rem;">
-    This site will be under constant construction, so please expect more content. Site last updated:12/29/2025
+  <p style="text-align: center; color: #aad; margin-top: 1rem; font-size: 0.85rem;">
+    This site will be under constant construction, so please expect more content. <br>
+    Site last updated: 12/29/2025
   </p>
 
   <footer>
-    &copy; The Church of Cosmic Oneness & The Order of Unicosmoism. All rights reserved. Embrace the Unicosmic Way.
+    &copy; The Church of Cosmic Oneness & The Order of Unicosmoism. All rights reserved. <br> Embrace the Unicosmic Way.
   </footer>
 
-  <!-- Hit-counter -->
   <div style="text-align:center; margin: 2rem 0;">
     <a href="https://www.hitwebcounter.com" target="_blank">
-      <img
-        src="https://hitwebcounter.com/counter/counter.php?page=20827485&style=0010&nbdigits=5&type=page&initCount=0"
-        title="Counter Widget"
-        alt="Visit counter For Websites"
-        border="0"
-      />
+      <img src="https://hitwebcounter.com/counter/counter.php?page=20827485&style=0010&nbdigits=5&type=page&initCount=0" title="Counter Widget" alt="Visit counter" border="0" />
     </a>
   </div>
 
   <script>
-    // Generate twinkling stars
     const starCount = 150;
     const starsContainer = document.getElementById('stars');
     for (let i = 0; i < starCount; i++) {
@@ -323,16 +309,16 @@
       starsContainer.appendChild(star);
     }
 
-    // Play background music after first user interaction
     document.addEventListener('click', () => {
       const audio = document.getElementById('bg-music');
-      if (audio.paused) {
+      if (audio && audio.paused) {
         audio.play();
       }
     }, { once: true });
   </script>
 </body>
 </html>
+
 
 
 
