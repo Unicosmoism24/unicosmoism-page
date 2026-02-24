@@ -1,4 +1,181 @@
-<main>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Unicosmic Teachings</title>
+  <link rel="icon" href="favicon.png" type="image/png" />
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: #000;
+      color: #d0eaff;
+      font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
+      font-weight: bold;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    #stars {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      background: black;
+      overflow: hidden;
+    }
+
+    .star {
+      position: absolute;
+      width: 2px;
+      height: 2px;
+      background: #88ccff;
+      border-radius: 50%;
+      animation: twinkle 2s infinite ease-in-out;
+    }
+
+    @keyframes twinkle {
+      0%, 100% { opacity: 0.2; }
+      50%      { opacity: 1; }
+    }
+
+    header {
+      text-align: center;
+      padding: 3rem 1rem 2rem 1rem;
+      background: rgba(0, 0, 64, 0.6);
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      color: #7ec8e3;
+      text-shadow: 0 0 10px #9ef;
+    }
+
+    header p {
+      font-style: italic;
+      color: #a9d6f3;
+      font-size: 1.1rem;
+    }
+
+    nav {
+      text-align: center;
+      margin-bottom: 1.5rem;
+      background: rgba(0, 0, 40, 0.4);
+      padding: 10px 0;
+    }
+
+    nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: inline-flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.5rem;
+    }
+
+    nav a {
+      color: #d0eaff;
+      text-decoration: none;
+      font-size: 1.05rem;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #80e0ff;
+      text-shadow: 0 0 8px #80e0ff;
+    }
+
+    nav img {
+      width: 18px;
+      height: 18px;
+      vertical-align: middle;
+      margin-right: 6px;
+    }
+
+    main {
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 2.5rem;
+      background: rgba(0, 0, 64, 0.7);
+      border-radius: 15px;
+      box-shadow: 0 0 40px rgba(0, 150, 255, 0.2);
+      backdrop-filter: blur(4px);
+    }
+
+    h2 {
+      color: #b0ffff;
+      text-shadow: 0 0 8px #8fd;
+      border-bottom: 2px solid rgba(136, 221, 255, 0.3);
+      padding-bottom: 0.5rem;
+      text-align: center;
+      margin-top: 2rem;
+    }
+
+    h3 {
+      text-align: center;
+      color: #a9d6f3;
+      font-size: 1rem;
+      margin-top: 1rem;
+      font-style: italic;
+    }
+
+    .quote-box {
+      border-left: 4px solid #80e0ff;
+      padding: 10px 20px;
+      font-style: italic;
+      margin: 2rem 0;
+      background: rgba(126, 200, 227, 0.1);
+      color: #b0ffff;
+    }
+
+    .divider {
+      height: 2px;
+      background: linear-gradient(to right, transparent, rgba(136, 221, 255, 0.5), transparent);
+      margin: 3rem 0;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      color: #aad;
+      font-size: 0.9rem;
+    }
+
+    p {
+      margin-bottom: 1.5rem;
+    }
+  </style>
+</head>
+<body>
+  <div id="stars"></div>
+
+  <audio autoplay loop id="bg-music" oncanplay="this.volume=0.1">
+    <source src="celestial-short.mp3" type="audio/mpeg">
+  </audio>
+
+  <header>
+    <h1>The Church of Cosmic Oneness</h1>
+    <p>of the Order of Unicosmoism and the Unicosmic Way</p>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="index.html"><img src="favicon.png" alt="Home"> Home</a></li>
+      <li><a href="about.html"><img src="favicon.png" alt="About"> About Unicosmoism</a></li>
+      <li><a href="important-links.html"><img src="favicon.png" alt="Links"> Important Links</a></li>
+      <li><a href="cosmic-visitors.html"><img src="favicon.png" alt="Visitors"> Cosmic Visitors</a></li>
+      <li><a href="unicosmic-teachings.html"><img src="favicon.png" alt="Book"> Unicosmic Teachings</a></li>
+      <li><a href="contact.html"><img src="favicon.png" alt="Contact"> Contact</a></li>
+      <li><a href="unicosmic-sacraments.html"><img src="favicon.png" alt="Sacraments"> Unicosmic Sacraments</a></li>
+    </ul>
+  </nav>
+
+  <main>
     <h2>Introduction to Unicosmic Teachings: The Unicosmic Path</h2>
     
     <p>The real mission here is to keep a light on for the people who have always felt a connection to the stars but did not have a place to talk about it. Most of us grew up being told we are separate from everything else. We are told we are separate from nature, separate from each other, and definitely separate from the rest of the universe. In the long run, we want to show that this separation is just an illusion. Whether you look at it through a telescope or through quantum physics, everything is connected. We are here to be a landing spot for those who want to explore that connection without the weight of old-school religious rules or dogma.</p>
@@ -27,20 +204,49 @@
 
     <p>When you wake up each morning, do what I do. Once you come to your senses and are awake enough to think, sit on the edge of your bed comfortably, close your eyes, and repeat either out loud or in your head: "I am not separate from the world around me. Everything is one." Repeat this several times slowly every day, as the human mind thrives on repetition. This is how we train and wire ourselves to master skills, whether they are mental or physical. If you would also like to include another mantra, I have recently incorporated the advice of the Venerable Pannakara, of the Walk for Peace monks, by also chanting: "Today will be my peaceful day. Nobody can ruin it but me." Chanting both mantras upon waking will help set your mind for the day ahead. I promise it will reduce stress and help you face problems in a totally different manner than when you think the entire world is an alien outside force that is against you in every way.</p>
     <h3>End of Lesson 1</h3>
-    <br>
+    
+    <div class="divider"></div>
+
     <h2>Lesson 2: Living in Peace and Harmony with the World</h2>
-<p>One of the leading causes of human-induced suffering and anguish is that most people are not at peace with themselves. There are plenty of people who say they practice peace and mindfulness but are not in harmony with their own inner state, which makes it impossible for them to bring peace to the world or to others. This lack of alignment will only lead to more suffering. You must always start within in order to radiate love, peace, and harmony outward. All love and kindness start within and blossom outward! There is a quote from Carl Jung that says, "If the wrong man uses the right means, the right means work in the wrong way." This applies perfectly to those attempting to do good in the world when their own vibration remains negative.</p>
+    
+    <p>One of the leading causes of human-induced suffering and anguish is that most people are not at peace with themselves. There are plenty of people who say they practice peace and mindfulness but are not in harmony with their own inner state, which makes it impossible for them to bring peace to the world or to others. This lack of alignment will only lead to more suffering. You must always start within in order to radiate love, peace, and harmony outward. All love and kindness start within and blossom outward! There is a quote from Carl Jung that says, "If the wrong man uses the right means, the right means work in the wrong way." This applies perfectly to those attempting to do good in the world when their own vibration remains negative.</p>
 
-<p>In order to cultivate inner peace, you must practice mindfulness and full self-awareness. This simply entails being fully present and aware of your inner and outer environment as you go about your daily life. Instead of moving through your day on a sort of autopilot, stay aware of even the most seemingly mundane actions, such as each step you take or each breath you inhale and exhale. For thousands of years, monks from various traditions around the world have practiced this form of mindful meditation to slowly chip away at the Ego and expose the raw self to be reshaped. Each action you take, whether it involves steps, breaths, thoughts, or just observing your surroundings without labeling what you see and hear, will eventually bring your attention to the clear fact that nothing in this world is separate. Everything that happens is interdependent with its surroundings.</p>
+    <p>In order to cultivate inner peace, you must practice mindfulness and full self-awareness. This simply entails being fully present and aware of your inner and outer environment as you go about your daily life. Instead of moving through your day on a sort of autopilot, stay aware of even the most seemingly mundane actions, such as each step you take or each breath you inhale and exhale. For thousands of years, monks from various traditions around the world have practiced this form of mindful meditation to slowly chip away at the Ego and expose the raw self to be reshaped. Each action you take, whether it involves steps, breaths, thoughts, or just observing your surroundings without labeling what you see and hear, will eventually bring your attention to the clear fact that nothing in this world is separate. Everything that happens is interdependent with its surroundings.</p>
 
-<p>If practicing deep self-awareness and mindfulness seems overwhelming, take it slow and simply begin with a basic mindfulness meditation such as Buddhist Caṅkama, or simply Walking Meditation. The method is to focus entirely on the physical sensations of walking. This was practiced by the famous Walk for Peace monks who walked from their temple in Fort Worth, Texas, all the way to Washington, D.C. In the Buddhist tradition, it is taught that the concentration you build while walking lasts much longer than the concentration you build while sitting. Because you are moving, your mind learns how to stay calm even when the world around you is in motion. This makes it easier to keep your vibration high when you are at work, grocery shopping, or dealing with family stress. This is also a helpful meditation method for the modern person who fidgets or cannot sit still long enough to do a sitting meditation.</p>
+    <p>If practicing deep self-awareness and mindfulness seems overwhelming, take it slow and simply begin with a basic mindfulness meditation such as Buddhist Caṅkama, or simply Walking Meditation. The method is to focus entirely on the physical sensations of walking. This was practiced by the famous Walk for Peace monks who walked from their temple in Fort Worth, Texas, all the way to Washington, D.C. In the Buddhist tradition, it is taught that the concentration you build while walking lasts much longer than the concentration you build while sitting. Because you are moving, your mind learns how to stay calm even when the world around you is in motion. This makes it easier to keep your vibration high when you are at work, grocery shopping, or dealing with family stress. This is also a helpful meditation method for the modern person who fidgets or cannot sit still long enough to do a sitting meditation.</p>
 
-<p>By focusing entirely on the simple sensation of each step, we give the restless part of our mind a specific job to do. This focus acts like an anchor that pulls us back into the present moment. When we stop rushing to get to a destination and instead focus on the act of moving itself, we start to see ourselves more clearly. We begin to notice the tension we carry, the impatience that bubbles up, and the habitual thoughts that usually run our lives in the background. As we start to notice all of this background chaos, we can then start to eliminate it, or at least draw our attention away from it, and instead begin focusing on the present moment.</p>
+    <p>By focusing entirely on the simple sensation of each step, we give the restless part of our mind a specific job to do. This focus acts like an anchor that pulls us back into the present moment. When we stop rushing to get to a destination and instead focus on the act of moving itself, we start to see ourselves more clearly. We begin to notice the tension we carry, the impatience that bubbles up, and the habitual thoughts that usually run our lives in the background. As we start to notice all of this background chaos, we can then start to eliminate it, or at least draw our attention away from it, and instead begin focusing on the present moment.</p>
 
-<p>There are plenty of other meditations and mind techniques that can help anchor us and cleanse our Ego. For convenience, I will provide some meditation instructions in the Unicosmic Sacraments section of the church webpage.</p>
+    <p>There are plenty of other meditations and mind techniques that can help anchor us and cleanse our Ego. For convenience, I will provide some meditation instructions in the Unicosmic Sacraments section of the church webpage.</p>
 
-<p>We will end this lesson with this: When you live your life on autopilot mode and mindlessly go through every day without focus, not only does your life zoom right before your eyes without you noticing, but it also brings unhealthy levels of stress. This is because you are tricking your mind into believing that you have to be in a constant rat-race and competition with everyone else around you. It tricks you into believing that you are only worth something if you have a good job, education, spouse, and wealth. You must understand that there really is no race and there never has been. It has all been a lie. This lie has been propagated by the egotistical and power-hungry people of this world who have so fully absorbed themselves in this game of life that they only feel valuable if they control others. Luckily, the technological age has allowed tens of millions of people just like you and me to come to this realization of mass deception, whereas this would not have been possible even 30 years ago.</p> 
+    <p>We will end this lesson with this: When you live your life on autopilot mode and mindlessly go through every day without focus, not only does your life zoom right before your eyes without you noticing, but it also brings unhealthy levels of stress. This is because you are tricking your mind into believing that you have to be in a constant rat-race and competition with everyone else around you. It tricks you into believing that you are only worth something if you have a good job, education, spouse, and wealth. You must understand that there really is no race and there never has been. It has all been a lie. This lie has been propagated by the egotistical and power-hungry people of this world who have so fully absorbed themselves in this game of life that they only feel valuable if they control others. Luckily, the technological age has allowed tens of millions of people just like you and me to come to this realization of mass deception, whereas this would not have been possible even 30 years ago.</p> 
 
-<p>No matter how bad the current world may seem, we must take full advantage of the time we currently exist in. Humanity is on the verge of a species-changing spiritual breakthrough. This is a breakthrough of which we can and will be at the forefront, and it will change humanity and the planet for the better. We can be some of the first to collectively know our true purpose in this Universe that we have forgotten we created.</p>
+    <p>No matter how bad the current world may seem, we must take full advantage of the time we currently exist in. Humanity is on the verge of a species-changing spiritual breakthrough. This is a breakthrough of which we can and will be at the forefront, and it will change humanity and the planet for the better. We can be some of the first to collectively know our true purpose in this Universe that we have forgotten we created.</p>
     <h3>End of Lesson 2</h3>
-</main>
+  </main>
+
+  <footer>
+    &copy; The Church of Cosmic Oneness & The Order of Unicosmoism. All rights reserved. <br> Embrace the Unicosmic Way.
+  </footer>
+
+  <script>
+    const starCount = 150;
+    const starsContainer = document.getElementById('stars');
+    for (let i = 0; i < starCount; i++) {
+      const star = document.createElement('div');
+      star.className = 'star';
+      star.style.top = `${Math.random() * 100}%`;
+      star.style.left = `${Math.random() * 100}%`;
+      star.style.animationDuration = `${1 + Math.random() * 2}s`;
+      starsContainer.appendChild(star);
+    }
+
+    document.addEventListener('click', () => {
+      const audio = document.getElementById('bg-music');
+      if (audio && audio.paused) {
+        audio.play();
+      }
+    }, { once: true });
+  </script>
+</body>
+</html>
