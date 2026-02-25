@@ -16,6 +16,25 @@
       font-weight: bold;
       line-height: 1.7;
       overflow-x: hidden;
+      scroll-behavior: smooth; /* Makes "Back to Top" glide smoothly */
+    }
+
+    /* --- READING PROGRESS BAR --- */
+    #progress-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 5px;
+      background: transparent;
+      z-index: 1000;
+    }
+
+    #progress-bar {
+      height: 100%;
+      background: #80e0ff;
+      width: 0%;
+      box-shadow: 0 0 10px #80e0ff;
     }
 
     #stars {
@@ -146,19 +165,58 @@
       font-size: 0.9rem;
     }
 
+    /* --- FOCUS HIGHLIGHTER --- */
     p {
       margin-bottom: 1.5rem;
+      padding: 10px;
+      border-radius: 8px;
+      transition: background 0.4s ease, color 0.4s ease;
+      opacity: 0.85;
+    }
+
+    p:hover {
+      background: rgba(128, 224, 255, 0.1); /* Subtle blue tint */
+      color: #ffffff;
+      opacity: 1;
+      cursor: text;
+    }
+
+    /* --- BACK TO TOP BUTTON --- */
+    #backToTop {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background: rgba(0, 0, 64, 0.8);
+      color: #80e0ff;
+      border: 1px solid #80e0ff;
+      padding: 12px 18px;
+      border-radius: 50px;
+      cursor: pointer;
+      display: none; /* Hidden by default */
+      z-index: 100;
+      font-weight: bold;
+      transition: all 0.3s ease;
+      box-shadow: 0 0 15px rgba(128, 224, 255, 0.3);
+    }
+
+    #backToTop:hover {
+      background: #80e0ff;
+      color: #000;
+      box-shadow: 0 0 20px #80e0ff;
     }
   </style>
 </head>
 <body>
+
+  <div id="progress-container"><div id="progress-bar"></div></div>
+
   <div id="stars"></div>
 
   <audio autoplay loop id="bg-music" oncanplay="this.volume=0.1">
     <source src="celestial-short.mp3" type="audio/mpeg">
   </audio>
 
-  <header>
+  <header id="top">
     <h1>The Church of Cosmic Oneness</h1>
     <p>of the Order of Unicosmoism and the Unicosmic Way</p>
   </header>
@@ -223,13 +281,20 @@
 
     <p>No matter how bad the current world may seem, we must take full advantage of the time we currently exist in. Humanity is on the verge of a species-changing spiritual breakthrough. This is a breakthrough of which we can and will be at the forefront, and it will change humanity and the planet for the better. We can be some of the first to collectively know our true purpose in this Universe that we have forgotten we created.</p>
     <h3>End of Lesson 2</h3>
+
+    <div class="divider"></div>
+
+    <h2>Lesson 3: To Be Added Soon</h2>
   </main>
+
+  <button id="backToTop" onclick="window.scrollTo(0,0);">Back to Top ↑</button>
 
   <footer>
     &copy; The Church of Cosmic Oneness & The Order of Unicosmoism. All rights reserved. <br> Embrace the Unicosmic Way.
   </footer>
 
   <script>
+    // Star Generation
     const starCount = 150;
     const starsContainer = document.getElementById('stars');
     for (let i = 0; i < starCount; i++) {
@@ -241,12 +306,31 @@
       starsContainer.appendChild(star);
     }
 
+    // Audio Playback
     document.addEventListener('click', () => {
       const audio = document.getElementById('bg-music');
       if (audio && audio.paused) {
         audio.play();
       }
     }, { once: true });
+
+    // Scroll Logic for Progress Bar and Back to Top Button
+    window.onscroll = function() {
+      let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+      let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      let scrolled = (winScroll / height) * 100;
+      
+      // Update Progress Bar
+      document.getElementById("progress-bar").style.width = scrolled + "%";
+
+      // Show/Hide Back to Top Button
+      const btt = document.getElementById("backToTop");
+      if (winScroll > 300) {
+        btt.style.display = "block";
+      } else {
+        btt.style.display = "none";
+      }
+    };
   </script>
 </body>
 </html>
