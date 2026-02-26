@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Church Forum - Unicosmoism</title>
+  <link rel="icon" href="favicon.png" type="image/png" />
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: #000;
+      color: #d0eaff;
+      font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
+      font-weight: bold;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    #stars {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      background: black;
+      overflow: hidden;
+    }
+
+    .star {
+      position: absolute;
+      width: 2px;
+      height: 2px;
+      background: #88ccff;
+      border-radius: 50%;
+      animation: twinkle 2s infinite ease-in-out;
+    }
+
+    @keyframes twinkle {
+      0%, 100% { opacity: 0.2; }
+      50%      { opacity: 1; }
+    }
+
+    header {
+      text-align: center;
+      padding: 3rem 1rem 2rem 1rem;
+      background: rgba(0, 0, 64, 0.6);
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      color: #7ec8e3;
+      text-shadow: 0 0 10px #9ef;
+    }
+
+    header p {
+      font-style: italic;
+      color: #a9d6f3;
+      font-size: 1.1rem;
+    }
+
+    /* MASTER NAVIGATION */
+    nav {
+      text-align: center;
+      margin-bottom: 1.5rem;
+      background: rgba(0, 0, 40, 0.4);
+      padding: 10px 0;
+    }
+
+    nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: inline-flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.5rem;
+    }
+
+    nav a {
+      color: #d0eaff;
+      text-decoration: none;
+      font-size: 1.05rem;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #80e0ff;
+      text-shadow: 0 0 8px #80e0ff;
+    }
+
+    nav img {
+      width: 18px;
+      height: 18px;
+      vertical-align: middle;
+      margin-right: 6px;
+    }
+
+    main {
+      max-width: 800px;
+      margin: 4rem auto;
+      padding: 3rem;
+      background: rgba(0, 0, 64, 0.7);
+      border-radius: 15px;
+      box-shadow: 0 0 40px rgba(0, 150, 255, 0.2);
+      backdrop-filter: blur(4px);
+      text-align: center;
+    }
+
+    h2 {
+      color: #b0ffff;
+      text-shadow: 0 0 8px #8fd;
+      border-bottom: 2px solid rgba(136, 221, 255, 0.3);
+      padding-bottom: 0.5rem;
+      margin-top: 0;
+    }
+
+    .forum-link {
+      display: inline-block;
+      font-size: 1.8rem;
+      color: #80e0ff;
+      text-decoration: none;
+      margin: 2rem 0;
+      padding: 15px 30px;
+      border: 1px solid rgba(128, 224, 255, 0.3);
+      border-radius: 10px;
+      transition: all 0.3s ease;
+      text-shadow: 0 0 5px rgba(128, 224, 255, 0.5);
+      background: rgba(0, 80, 150, 0.2);
+    }
+
+    .forum-link:hover {
+      text-shadow: 0 0 15px #80e0ff;
+      transform: scale(1.05);
+      background: rgba(0, 80, 150, 0.4);
+      border-color: #80e0ff;
+    }
+
+    .copy-text {
+      font-size: 1rem;
+      color: #a9d6f3;
+      opacity: 0.9;
+      margin-top: 2rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      color: #aad;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+  <div id="stars"></div>
+
+  <audio autoplay loop id="bg-music" oncanplay="this.volume=0.1">
+    <source src="celestial-short.mp3" type="audio/mpeg">
+  </audio>
+
+  <header>
+    <h1>The Church of Cosmic Oneness</h1>
+    <p>of the Order of Unicosmoism and the Unicosmic Way</p>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="index.html"><img src="favicon.png" alt="Home"> Home</a></li>
+      <li><a href="about.html"><img src="favicon.png" alt="About"> About Unicosmoism & Rev. Johnson</a></li>
+      <li><a href="important-links.html"><img src="favicon.png" alt="Links"> Important Links</a></li>
+      <li><a href="cosmic-visitors.html"><img src="favicon.png" alt="Visitors"> Cosmic Visitors</a></li>
+      <li><a href="unicosmic-teachings.html"><img src="favicon.png" alt="Book"> Unicosmic Teachings</a></li>
+      <li><a href="contact.html"><img src="favicon.png" alt="Contact"> Contact</a></li>
+      <li><a href="church-forum.html"><img src="favicon.png" alt="Forum"> Church Forum</a></li>
+      <li><a href="unicosmic-sacraments.html"><img src="favicon.png" alt="Sacraments"> Unicosmic Sacraments</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <h2>Church Forum</h2>
+    <p>Join the congregation in dialogue, sharing wisdom and seeking the Unicosmic Way:</p>
+    
+    <div style="margin: 3rem 0;">
+      <a href="https://unicosmoism.freeflarum.com" class="forum-link" target="_blank">
+        Enter the Church's Forum Here, Hosted by FreeFlarum
+      </a>
+    </div>
+
+    <p class="copy-text">
+      Connect with fellow seekers of unity, share your experiences, and participate in our growing community.
+    </p>
+  </main>
+
+  <div style="text-align:center; margin: 2rem 0;">
+    <a href="https://www.hitwebcounter.com" target="_blank">
+      <img src="https://hitwebcounter.com/counter/counter.php?page=20827485&style=0010&nbdigits=5&type=page&initCount=0" 
+           title="Counter Widget" 
+           alt="Visit counter" 
+           border="0" />
+    </a>
+  </div>
+
+  <footer>
+    &copy; The Church of Cosmic Oneness & The Order of Unicosmoism. All rights reserved. <br> Embrace the Unicosmic Way.
+  </footer>
+
+  <script>
+    const starCount = 150;
+    const starsContainer = document.getElementById('stars');
+    for (let i = 0; i < starCount; i++) {
+      const star = document.createElement('div');
+      star.className = 'star';
+      star.style.top = `${Math.random() * 100}%`;
+      star.style.left = `${Math.random() * 100}%`;
+      star.style.animationDuration = `${1 + Math.random() * 2}s`;
+      starsContainer.appendChild(star);
+    }
+
+    document.addEventListener('click', () => {
+      const audio = document.getElementById('bg-music');
+      if (audio && audio.paused) {
+        audio.play();
+      }
+    }, { once: true });
+  </script>
+</body>
+</html>
