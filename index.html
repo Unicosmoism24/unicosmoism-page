@@ -43,7 +43,7 @@
       50%      { opacity: 1; }
     }
 
-    /* HEADER STYLES WITH FLEXBOX */
+    /* HEADER STYLES */
     header {
       display: flex;
       align-items: center;
@@ -57,7 +57,6 @@
       text-align: center;
     }
 
-    /* ROUND LOGO WITH NEON PULSE */
     .header-logo {
       width: 80px;
       height: 80px;
@@ -74,7 +73,7 @@
       }
       50% {
         box-shadow: 0 0 20px rgba(0, 180, 255, 0.8), 0 0 30px rgba(0, 180, 255, 0.4);
-        transform: scale(1.03); /* Very slight grow effect */
+        transform: scale(1.03);
       }
     }
 
@@ -92,41 +91,49 @@
       font-size: 1.1rem;
     }
 
-    /* NAVBAR STYLES */
-    nav {
+    /* NEW CLEAN NAVBAR SYSTEM */
+    nav.unicosmic-nav {
       text-align: center;
       margin-bottom: 1.5rem;
       background: rgba(0, 0, 40, 0.4);
-      padding: 10px 0;
+      padding: 15px 10px;
     }
 
-    nav ul {
+    nav.unicosmic-nav ul {
       list-style: none;
       padding: 0;
-      margin: 0;
-      display: inline-flex;
+      margin: 0 auto;
+      display: flex;
       flex-wrap: wrap; 
       justify-content: center;
-      gap: 1.5rem;
+      gap: 1rem 1.5rem; 
+      max-width: 900px; /* Forces wrapping so it doesn't stretch too long */
     }
 
-    nav a {
+    nav.unicosmic-nav li {
+      display: flex;
+      align-items: center;
+    }
+
+    nav.unicosmic-nav a {
       color: #d0eaff;
       text-decoration: none;
       font-size: 1.05rem;
       transition: color 0.3s ease;
+      display: flex;
+      align-items: center;
+      white-space: nowrap;
     }
 
-    nav a:hover {
+    nav.unicosmic-nav a:hover {
       color: #80e0ff;
       text-shadow: 0 0 8px #80e0ff;
     }
 
-    nav img {
+    nav.unicosmic-nav img {
       width: 18px;
       height: 18px;
-      vertical-align: middle;
-      margin-right: 6px;
+      margin-right: 8px;
     }
 
     .center-image {
@@ -196,6 +203,18 @@
       border-left: 2px solid #ffd27f;
     }
 
+    .video-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      margin: 20px 0;
+    }
+
+    .video-container iframe {
+      max-width: 100%;
+    }
+
     footer {
       text-align: center;
       padding: 2rem 1rem;
@@ -220,11 +239,12 @@
     <img src="earthsunmoon2.png" alt="Cosmic Logo" class="header-logo">
   </header>
 
-  <nav>
+  <nav class="unicosmic-nav">
     <ul>
       <li><a href="index.html"><img src="favicon.png" alt="Home"> Home</a></li>
       <li><a href="about.html"><img src="favicon.png" alt="About"> About Unicosmoism & Rev. Johnson</a></li>
       <li><a href="important-links.html"><img src="favicon.png" alt="Links"> Important Links</a></li>
+      <li><a href="eventcal.html"><img src="favicon.png" alt="Calendar"> Calendar of Events</a></li>
       <li><a href="cosmic-visitors.html"><img src="favicon.png" alt="Visitors"> Cosmic Visitors</a></li>
       <li><a href="unicosmic-teachings.html"><img src="favicon.png" alt="Book"> Unicosmic Teachings</a></li>
       <li><a href="contact.html"><img src="favicon.png" alt="Contact"> Contact</a></li>
@@ -240,36 +260,17 @@
     </div>
   </div>
 
-  <div class="divider"></div>
-
-  <style>
-  .video-container {
-    display: flex;
-    justify-content: center; /* Centers horizontally */
-    align-items: center;     /* Centers vertically (if the container has height) */
-    width: 100%;             /* Ensures container takes full width */
-    margin: 20px 0;          /* Adds some spacing above and below */
-  }
-
-  /* Optional: Ensure the iframe itself has a set size */
-  .video-container iframe {
-    max-width: 100%;
-  }
-</style>
-
-<div class="video-container">
-  <iframe 
-    width="315" 
-    height="560" 
-    src="https://www.youtube.com/embed/WUKSYB7WYMA?si=WysD4PBJo1Nn-1U0" 
-    title="YouTube video player" 
-    frameborder="0" 
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-    allowfullscreen>
-  </iframe>
-</div>
-
-  <div class="divider"></div>
+  <div class="video-container">
+    <iframe 
+      width="315" 
+      height="560" 
+      src="https://www.youtube.com/embed/WUKSYB7WYMA?si=WysD4PBJo1Nn-1U0" 
+      title="YouTube video player" 
+      frameborder="0" 
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+      allowfullscreen>
+    </iframe>
+  </div>
 
   <main>
     <p style="text-align: center;"><em>In the beginning, there was only Oneness. That Oneness was and remains pure consciousness, an infinite ocean where every living organism serves as a vital focal point for the whole. Within the vastness of all that is, we remain inseparable from the cosmos, bound together by the spirit and life force that flows through every cell. The teachings of Unicosmoism guide us to live in harmony with the universe, to embrace universal love and cosmic responsibility. When we peel back the layers of our perception, we realize that no separate individual exists at the heart of existence. We are quite literally the Universe observing itself through one entity at a time, a truth that unites the microscopic and the gargantuan in a single tapestry of being and cosmic knowledge. Through the 8 Doctrines of Unicosmoism provided below, you will transition from simple study to full embodiment of this cosmic awareness. With everything that's currently happening in this world, we must urgently unite and come together like never before in humanity's known history.</em></p>
@@ -344,7 +345,7 @@
 
   <p style="text-align: center; color: #aad; margin-top: 1rem; font-size: 0.85rem;">
     This site will be under constant construction, so please expect more content. <br>
-    Site last updated: 3/10/2026 - Home, welcome video added.
+    Site last updated: 3/18/2026 - Navbar fixed, event calendar added.
   </p>
 
   <footer>
@@ -378,32 +379,3 @@
   </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
