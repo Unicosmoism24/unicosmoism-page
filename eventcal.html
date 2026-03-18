@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Calendar of Events - The Church of Cosmic Oneness</title>
+  <link rel="icon" href="favicon.png" type="image/png" />
+
+  <style>
+    /* --- SHARED MAIN SITE STYLES --- */
+    body {
+      margin: 0;
+      padding: 0;
+      background: #000;
+      color: #d0eaff;
+      font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
+      font-weight: bold;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    #stars {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      background: black;
+      overflow: hidden;
+    }
+
+    .star {
+      position: absolute;
+      width: 2px;
+      height: 2px;
+      background: #88ccff;
+      border-radius: 50%;
+      animation: twinkle 2s infinite ease-in-out;
+    }
+
+    @keyframes twinkle {
+      0%, 100% { opacity: 0.2; }
+      50%      { opacity: 1; }
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 2rem;
+      padding: 3rem 1rem 2rem 1rem;
+      background: rgba(0, 0, 64, 0.6);
+    }
+
+    .header-text { text-align: center; }
+
+    .header-logo {
+      width: 80px;
+      height: 80px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 1px solid rgba(128, 224, 255, 0.4);
+      animation: neonPulse 4s infinite ease-in-out;
+    }
+
+    @keyframes neonPulse {
+      0%, 100% {
+        box-shadow: 0 0 5px rgba(0, 150, 255, 0.4), 0 0 10px rgba(0, 150, 255, 0.2);
+        transform: scale(1);
+      }
+      50% {
+        box-shadow: 0 0 20px rgba(0, 180, 255, 0.8), 0 0 30px rgba(0, 180, 255, 0.4);
+        transform: scale(1.03);
+      }
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+      color: #7ec8e3;
+      text-shadow: 0 0 10px #9ef;
+    }
+
+    header p {
+      margin: 0.5rem 0 0 0;
+      font-style: italic;
+      color: #a9d6f3;
+      font-size: 1.1rem;
+    }
+
+    nav {
+      text-align: center;
+      margin-bottom: 1.5rem;
+      background: rgba(0, 0, 40, 0.4);
+      padding: 10px 0;
+    }
+
+    nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: inline-flex;
+      flex-wrap: wrap; 
+      justify-content: center;
+      gap: 1.5rem;
+    }
+
+    nav a {
+      color: #d0eaff;
+      text-decoration: none;
+      font-size: 1.05rem;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #80e0ff;
+      text-shadow: 0 0 8px #80e0ff;
+    }
+
+    nav img {
+      width: 18px;
+      height: 18px;
+      vertical-align: middle;
+      margin-right: 6px;
+    }
+
+    .center-image {
+      text-align: center;
+      margin: 2rem 0;
+    }
+
+    .center-image img {
+      display: block;
+      margin: 0 auto;
+      max-width: 100%;
+      height: auto;
+      border-radius: 50%; 
+    }
+
+    main {
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 2rem;
+      background: rgba(0, 0, 64, 0.7);
+      border-radius: 15px;
+      box-shadow: 0 0 40px rgba(0, 150, 255, 0.2);
+      backdrop-filter: blur(4px);
+      text-align: center;
+    }
+
+    h2 {
+      color: #b0ffff;
+      text-shadow: 0 0 8px #8fd;
+      border-bottom: 2px solid rgba(136, 221, 255, 0.3);
+      padding-bottom: 0.5rem;
+      text-align: center;
+    }
+
+    /* --- CALENDAR SPECIFIC STYLES --- */
+    #calendar-box { 
+      margin: 0 auto;
+      width: 100%;
+      max-width: 500px;
+    }
+
+    #cal-header { 
+      display: flex; 
+      justify-content: space-between; 
+      align-items: center;
+      margin-bottom: 20px; 
+      border-bottom: 2px solid rgba(136, 221, 255, 0.3); 
+      padding-bottom: 10px; 
+    }
+
+    #month-display {
+      color: #b0ffff;
+      text-shadow: 0 0 8px #8fd;
+      font-size: 1.5rem;
+    }
+    
+    .cal-btn { 
+      background: rgba(128, 224, 255, 0.1); 
+      color: #80e0ff; 
+      border: 1px solid rgba(128, 224, 255, 0.4); 
+      cursor: pointer; 
+      padding: 5px 15px; 
+      border-radius: 5px;
+      font-family: serif;
+      font-weight: bold;
+    }
+    .cal-btn:hover { background: rgba(128, 224, 255, 0.3); }
+
+    #grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 5px; }
+    .day-label { color: #ffd27f; font-size: 0.9em; padding-bottom: 10px; }
+    
+    .date { 
+      padding: 10px 0; 
+      border: 1px solid rgba(128, 224, 255, 0.1); 
+      cursor: pointer; 
+      min-height: 50px; 
+      display: flex; 
+      flex-direction: column; 
+      justify-content: center; 
+      border-radius: 4px;
+      transition: 0.3s;
+    }
+    .date:hover { background: rgba(128, 224, 255, 0.2); }
+    
+    .event-active { background-color: rgba(0, 150, 255, 0.25); color: #fff; border: 1px solid #80e0ff; }
+    .today { border: 2px solid #ffd27f !important; color: #ffd27f; }
+
+    #event-display { 
+      margin-top: 30px; 
+      text-align: left;
+      padding: 20px; 
+      background: rgba(255, 255, 255, 0.03); 
+      border: 1px solid rgba(128, 224, 255, 0.1);
+      border-radius: 12px;
+    }
+    .info-label { color: #ffd27f; border-bottom: 1px solid rgba(255, 210, 127, 0.2); margin-bottom: 10px; display: block; }
+    hr { border: 0; border-top: 1px dashed rgba(128, 224, 255, 0.3); margin: 15px 0; }
+
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      color: #aad;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 600px) {
+      header { flex-direction: column; gap: 1rem; }
+      .header-logo { width: 60px; height: 60px; }
+      .center-image img { width: 70%; }
+    }
+  </style>
+</head>
+<body>
+
+  <div id="stars"></div>
+
+  <audio autoplay loop id="bg-music" oncanplay="this.volume=0.1">
+    <source src="celestial-short.mp3" type="audio/mpeg">
+  </audio>
+
+  <header>
+    <img src="earthsunmoon2.png" alt="Cosmic Logo" class="header-logo">
+    <div class="header-text">
+      <h1>The Church of Cosmic Oneness</h1>
+      <p>of the Order of Unicosmoism and the Unicosmic Way</p>
+    </div>
+    <img src="earthsunmoon2.png" alt="Cosmic Logo" class="header-logo">
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="index.html"><img src="favicon.png" alt="Home"> Home</a></li>
+      <li><a href="about.html"><img src="favicon.png" alt="About"> About Unicosmoism & Rev. Johnson</a></li>
+      <li><a href="important-links.html"><img src="favicon.png" alt="Links"> Important Links</a></li>
+      <li><a href="cosmic-visitors.html"><img src="favicon.png" alt="Visitors"> Cosmic Visitors</a></li>
+      <li><a href="unicosmic-teachings.html"><img src="favicon.png" alt="Book"> Unicosmic Teachings</a></li>
+      <li><a href="contact.html"><img src="favicon.png" alt="Contact"> Contact</a></li>
+      <li><a href="forum.html"><img src="favicon.png" alt="Forum"> Church Forum</a></li>
+      <li><a href="unicosmic-sacraments.html"><img src="favicon.png" alt="Sacraments"> Unicosmic Sacraments</a></li>
+    </ul>
+  </nav>
+  <main>
+    <h2>CALENDAR OF EVENTS</h2>
+    
+    <div id="calendar-box">
+        <div id="cal-header">
+            <button class="cal-btn" onclick="changeMonth(-1)">&#171;</button>
+            <span id="month-display"></span>
+            <button class="cal-btn" onclick="changeMonth(1)">&#187;</button>
+        </div>
+        <div id="grid">
+            <div class="day-label">Sun</div><div class="day-label">Mon</div><div class="day-label">Tue</div>
+            <div class="day-label">Wed</div><div class="day-label">Thu</div><div class="day-label">Fri</div>
+            <div class="day-label">Sat</div>
+        </div>
+    </div>
+
+    <div id="event-display">
+        <span class="info-label">EVENT LOG:</span>
+        <div id="event-details">Select a date to observe scheduled events...</div>
+    </div>
+  </main>
+
+  <p style="text-align: center; color: #aad; margin-top: 1rem; font-size: 0.85rem;">
+    This Calendar will be updated frequently. Events may change. Always double-check!</p>
+
+  <footer>
+    &copy; The Church of Cosmic Oneness & The Order of Unicosmoism. All rights reserved. <br> Embrace the Unicosmic Way.
+  </footer>
+
+  <div style="text-align:center; margin: 2rem 0;">
+    <a href="https://www.hitwebcounter.com" target="_blank">
+      <img src="https://hitwebcounter.com/counter/counter.php?page=20827485&style=0010&nbdigits=5&type=page&initCount=0" title="Counter Widget" alt="Visit counter" border="0" />
+    </a>
+  </div>
+
+  <script>
+    // Starfield Animation
+    const starCount = 150;
+    const starsContainer = document.getElementById('stars');
+    for (let i = 0; i < starCount; i++) {
+      const star = document.createElement('div');
+      star.className = 'star';
+      star.style.top = `${Math.random() * 100}%`;
+      star.style.left = `${Math.random() * 100}%`;
+      star.style.animationDuration = `${1 + Math.random() * 2}s`;
+      starsContainer.appendChild(star);
+    }
+
+    // Audio Trigger
+    document.addEventListener('click', () => {
+      const audio = document.getElementById('bg-music');
+      if (audio && audio.paused) {
+        audio.play();
+      }
+    }, { once: true });
+
+    // Calendar Data
+    const cosmicEvents = {
+        "2026-03-20": { 
+            title: "SPRING EQUINOX", 
+            time: "10:46 EDT", 
+            location: "Global Observation", 
+            description: "Begins the 19th and ends the 21st.",
+            icon: "☀️"
+        }
+    };
+
+    let viewDate = new Date();
+
+    function render() {
+        const grid = document.getElementById('grid');
+        const monthNames = ["JANUARY", "FEBRUARY", "MARCH", "APRIL", "MAY", "JUNE", "JULY", "AUGUST", "SEPTEMBER", "OCTOBER", "NOVEMBER", "DECEMBER"];
+        
+        // Clear and rebuild labels
+        grid.innerHTML = `
+            <div class="day-label">Sun</div><div class="day-label">Mon</div><div class="day-label">Tue</div>
+            <div class="day-label">Wed</div><div class="day-label">Thu</div><div class="day-label">Fri</div>
+            <div class="day-label">Sat</div>
+        `;
+
+        const year = viewDate.getFullYear();
+        const month = viewDate.getMonth();
+        document.getElementById('month-display').innerText = monthNames[month] + " " + year;
+
+        const firstDay = new Date(year, month, 1).getDay();
+        const daysInMonth = new Date(year, month + 1, 0).getDate();
+
+        for (let i = 0; i < firstDay; i++) {
+            grid.appendChild(document.createElement('div'));
+        }
+
+        for (let d = 1; d <= daysInMonth; d++) {
+            const dateDiv = document.createElement('div');
+            dateDiv.className = 'date';
+            const key = `${year}-${String(month + 1).padStart(2, '0')}-${String(d).padStart(2, '0')}`;
+            const event = cosmicEvents[key];
+
+            dateDiv.innerHTML = `<span>${d}</span>`;
+            
+            if (event) {
+                dateDiv.classList.add('event-active');
+                dateDiv.onclick = () => {
+                    document.getElementById('event-details').innerHTML = `
+                        <strong style="font-size: 1.2em; color: #80e0ff;">${event.title}</strong> ${event.icon}<br>
+                        <span style="color:#ffd27f">TIME:</span> ${event.time}<br>
+                        <span style="color:#ffd27f">LOC:</span> ${event.location}<br>
+                        <hr>
+                        ${event.description}
+                    `;
+                };
+            } else {
+                dateDiv.onclick = () => {
+                    document.getElementById('event-details').innerText = "No specific events for this date.";
+                };
+            }
+
+            const now = new Date();
+            if (d === now.getDate() && month === now.getMonth() && year === now.getFullYear()) {
+                dateDiv.classList.add('today');
+            }
+            grid.appendChild(dateDiv);
+        }
+    }
+
+    function changeMonth(offset) {
+        viewDate.setMonth(viewDate.getMonth() + offset);
+        render();
+    }
+
+    render();
+  </script>
+</body>
+</html>
