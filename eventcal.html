@@ -125,19 +125,6 @@
       margin-right: 6px;
     }
 
-    .center-image {
-      text-align: center;
-      margin: 2rem 0;
-    }
-
-    .center-image img {
-      display: block;
-      margin: 0 auto;
-      max-width: 100%;
-      height: auto;
-      border-radius: 50%; 
-    }
-
     main {
       max-width: 800px;
       margin: 2rem auto;
@@ -231,7 +218,6 @@
     @media (max-width: 600px) {
       header { flex-direction: column; gap: 1rem; }
       .header-logo { width: 60px; height: 60px; }
-      .center-image img { width: 70%; }
     }
   </style>
 </head>
@@ -264,8 +250,9 @@
       <li><a href="unicosmic-sacraments.html"><img src="favicon.png" alt="Sacraments"> Unicosmic Sacraments</a></li>
     </ul>
   </nav>
+
   <main>
-    <h2>CALENDAR OF EVENTS</h2>
+    <h2>CALENDAR OF EVENTS & MOON PHASES</h2>
     
     <div id="calendar-box">
         <div id="cal-header">
@@ -286,21 +273,11 @@
     </div>
   </main>
 
-  <p style="text-align: center; color: #aad; margin-top: 1rem; font-size: 0.85rem;">
-    This Calendar will be updated frequently. Events may change. Always double-check!</p>
-
   <footer>
     &copy; The Church of Cosmic Oneness & The Order of Unicosmoism. All rights reserved. <br> Embrace the Unicosmic Way.
   </footer>
 
-  <div style="text-align:center; margin: 2rem 0;">
-    <a href="https://www.hitwebcounter.com" target="_blank">
-      <img src="https://hitwebcounter.com/counter/counter.php?page=20827485&style=0010&nbdigits=5&type=page&initCount=0" title="Counter Widget" alt="Visit counter" border="0" />
-    </a>
-  </div>
-
   <script>
-    // Starfield Animation
     const starCount = 150;
     const starsContainer = document.getElementById('stars');
     for (let i = 0; i < starCount; i++) {
@@ -312,21 +289,70 @@
       starsContainer.appendChild(star);
     }
 
-    // Audio Trigger
     document.addEventListener('click', () => {
       const audio = document.getElementById('bg-music');
-      if (audio && audio.paused) {
-        audio.play();
-      }
+      if (audio && audio.paused) { audio.play(); }
     }, { once: true });
 
-    // Calendar Data
+    const moonPhases = {
+        "2026-01-03": { title: "Full Moon", time: "11:03 ET / 08:03 PT", icon: "🌕" },
+        "2026-01-10": { title: "Last Quarter", time: "13:48 ET / 10:48 PT", icon: "🌗" },
+        "2026-01-18": { title: "New Moon", time: "17:52 ET / 14:52 PT", icon: "🌑" },
+        "2026-01-26": { title: "First Quarter", time: "05:48 ET / 02:48 PT", icon: "🌓" },
+        "2026-02-01": { title: "Full Moon", time: "17:09 ET / 14:09 PT", icon: "🌕" },
+        "2026-02-09": { title: "Last Quarter", time: "06:43 ET / 03:43 PT", icon: "🌗" },
+        "2026-02-17": { title: "New Moon", time: "07:01 ET / 04:01 PT", icon: "🌑" },
+        "2026-02-24": { title: "First Quarter", time: "15:28 ET / 12:28 PT", icon: "🌓" },
+        "2026-03-03": { title: "Full Moon", time: "06:38 ET / 03:38 PT", icon: "🌕" },
+        "2026-03-11": { title: "Last Quarter", time: "00:39 ET / 21:39 PT (10th)", icon: "🌗" },
+        "2026-03-18": { title: "New Moon", time: "15:23 ET / 12:23 PT", icon: "🌑" },
+        "2026-03-25": { title: "First Quarter", time: "23:23 ET / 20:23 PT", icon: "🌓" },
+        "2026-04-01": { title: "Full Moon", time: "22:12 ET / 19:12 PT", icon: "🌕" },
+        "2026-04-09": { title: "Last Quarter", time: "18:27 ET / 15:27 PT", icon: "🌗" },
+        "2026-04-16": { title: "New Moon", time: "21:52 ET / 18:52 PT", icon: "🌑" },
+        "2026-04-24": { title: "First Quarter", time: "07:34 ET / 04:34 PT", icon: "🌓" },
+        "2026-05-01": { title: "Full Moon", time: "13:23 ET / 10:23 PT", icon: "🌕" },
+        "2026-05-09": { title: "Last Quarter", time: "10:35 ET / 07:35 PT", icon: "🌗" },
+        "2026-05-16": { title: "New Moon", time: "04:02 ET / 01:02 PT", icon: "🌑" },
+        "2026-05-23": { title: "First Quarter", time: "17:11 ET / 14:11 PT", icon: "🌓" },
+        "2026-05-31": { title: "Full Moon", time: "04:45 ET / 01:45 PT", icon: "🌕" },
+        "2026-06-08": { title: "Last Quarter", time: "00:26 ET / 21:26 PT (7th)", icon: "🌗" },
+        "2026-06-14": { title: "New Moon", time: "11:03 ET / 08:03 PT", icon: "🌑" },
+        "2026-06-22": { title: "First Quarter", time: "04:44 ET / 01:44 PT", icon: "🌓" },
+        "2026-06-29": { title: "Full Moon", time: "18:57 ET / 15:57 PT", icon: "🌕" },
+        "2026-07-07": { title: "Last Quarter", time: "12:00 ET / 09:00 PT", icon: "🌗" },
+        "2026-07-13": { title: "New Moon", time: "19:40 ET / 16:40 PT", icon: "🌑" },
+        "2026-07-21": { title: "First Quarter", time: "18:03 ET / 15:03 PT", icon: "🌓" },
+        "2026-07-29": { title: "Full Moon", time: "08:35 ET / 05:35 PT", icon: "🌕" },
+        "2026-08-05": { title: "Last Quarter", time: "21:30 ET / 18:30 PT", icon: "🌗" },
+        "2026-08-12": { title: "New Moon", time: "06:38 ET / 03:38 PT", icon: "🌑" },
+        "2026-08-20": { title: "First Quarter", time: "09:16 ET / 06:16 PT", icon: "🌓" },
+        "2026-08-27": { title: "Full Moon", time: "21:49 ET / 18:49 PT", icon: "🌕" },
+        "2026-09-04": { title: "Last Quarter", time: "05:13 ET / 02:13 PT", icon: "🌗" },
+        "2026-09-10": { title: "New Moon", time: "20:34 ET / 17:34 PT", icon: "🌑" },
+        "2026-09-18": { title: "First Quarter", time: "22:19 ET / 19:19 PT", icon: "🌓" },
+        "2026-09-26": { title: "Full Moon", time: "10:49 ET / 07:49 PT", icon: "🌕" },
+        "2026-10-03": { title: "Last Quarter", time: "11:58 ET / 08:58 PT", icon: "🌗" },
+        "2026-10-10": { title: "New Moon", time: "12:50 ET / 09:50 PT", icon: "🌑" },
+        "2026-10-18": { title: "First Quarter", time: "13:00 ET / 10:00 PT", icon: "🌓" },
+        "2026-10-25": { title: "Full Moon", time: "23:38 ET / 20:38 PT", icon: "🌕" },
+        "2026-11-01": { title: "Last Quarter", time: "19:08 ET / 16:08 PT", icon: "🌗" },
+        "2026-11-09": { title: "New Moon", time: "06:01 ET / 03:01 PT", icon: "🌑" },
+        "2026-11-17": { title: "First Quarter", time: "04:09 ET / 01:09 PT", icon: "🌓" },
+        "2026-11-24": { title: "Full Moon", time: "11:53 ET / 08:53 PT", icon: "🌕" },
+        "2026-12-01": { title: "Last Quarter", time: "03:40 ET / 00:40 PT", icon: "🌗" },
+        "2026-12-09": { title: "New Moon", time: "00:52 ET / 21:52 PT (8th)", icon: "🌑" },
+        "2026-12-16": { title: "First Quarter", time: "19:14 ET / 16:14 PT", icon: "🌓" },
+        "2026-12-24": { title: "Full Moon", time: "00:28 ET / 21:28 PT (23rd)", icon: "🌕" },
+        "2026-12-30": { title: "Last Quarter", time: "14:14 ET / 11:14 PT", icon: "🌗" }
+    };
+
     const cosmicEvents = {
         "2026-03-20": { 
             title: "SPRING EQUINOX", 
             time: "10:46 EDT", 
             location: "Northern Hemisphere Observation", 
-            description: "Begins the 19th and ends the 21st. On the 20th, the day and night cycles will be in near-perfect balance.",
+            description: "On the 20th, the day and night cycles will be in near-perfect balance.",
             icon: "☀️"
         }
     };
@@ -337,7 +363,6 @@
         const grid = document.getElementById('grid');
         const monthNames = ["JANUARY", "FEBRUARY", "MARCH", "APRIL", "MAY", "JUNE", "JULY", "AUGUST", "SEPTEMBER", "OCTOBER", "NOVEMBER", "DECEMBER"];
         
-        // Clear and rebuild labels
         grid.innerHTML = `
             <div class="day-label">Sun</div><div class="day-label">Mon</div><div class="day-label">Tue</div>
             <div class="day-label">Wed</div><div class="day-label">Thu</div><div class="day-label">Fri</div>
@@ -351,33 +376,43 @@
         const firstDay = new Date(year, month, 1).getDay();
         const daysInMonth = new Date(year, month + 1, 0).getDate();
 
-        for (let i = 0; i < firstDay; i++) {
-            grid.appendChild(document.createElement('div'));
-        }
+        for (let i = 0; i < firstDay; i++) { grid.appendChild(document.createElement('div')); }
 
         for (let d = 1; d <= daysInMonth; d++) {
             const dateDiv = document.createElement('div');
             dateDiv.className = 'date';
             const key = `${year}-${String(month + 1).padStart(2, '0')}-${String(d).padStart(2, '0')}`;
-            const event = cosmicEvents[key];
-
-            dateDiv.innerHTML = `<span>${d}</span>`;
             
-            if (event) {
+            const event = cosmicEvents[key];
+            const moon = moonPhases[key];
+
+            if (event || moon) {
                 dateDiv.classList.add('event-active');
+                
+                // Show both icons if they both exist on one day
+                let gridIcons = "";
+                if (event) gridIcons += event.icon;
+                if (moon) gridIcons += " " + moon.icon;
+                
+                dateDiv.innerHTML = `<span>${d} ${gridIcons}</span>`;
+
                 dateDiv.onclick = () => {
-                    document.getElementById('event-details').innerHTML = `
-                        <strong style="font-size: 1.2em; color: #80e0ff;">${event.title}</strong> ${event.icon}<br>
-                        <span style="color:#ffd27f">TIME:</span> ${event.time}<br>
-                        <span style="color:#ffd27f">LOC:</span> ${event.location}<br>
-                        <hr>
-                        ${event.description}
-                    `;
+                    let html = "";
+                    if (event) {
+                        html += `<strong style="font-size: 1.2em; color: #80e0ff;">${event.title}</strong> ${event.icon}<br>
+                                 <span style="color:#ffd27f">TIME:</span> ${event.time}<br>
+                                 <span style="color:#ffd27f">LOC:</span> ${event.location}<br>
+                                 <hr>${event.description}<br><br>`;
+                    }
+                    if (moon) {
+                        html += `<strong style="font-size: 1.2em; color: #80e0ff;">${moon.title}</strong> ${moon.icon}<br>
+                                 <span style="color:#ffd27f">TIME:</span> ${moon.time}`;
+                    }
+                    document.getElementById('event-details').innerHTML = html;
                 };
             } else {
-                dateDiv.onclick = () => {
-                    document.getElementById('event-details').innerText = "No specific events for this date.";
-                };
+                dateDiv.innerHTML = `<span>${d}</span>`;
+                dateDiv.onclick = () => { document.getElementById('event-details').innerText = "No specific events for this date."; };
             }
 
             const now = new Date();
